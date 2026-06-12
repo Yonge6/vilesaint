@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;800&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Sans+KR:wght@400;600;800&family=Noto+Sans+SC:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260613-mobile" />
+    <link rel="stylesheet" href="./styles.css?v=20260613-comments" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -55,11 +55,11 @@
           <span class="ticker-label" data-i18n="breaking">Breaking</span>
           <div class="ticker-track">
             <p data-i18n="ticker">
-              The verdict just flipped — 41 countries are voting right now
+              Final: Mexico 2–0 South Africa · Korea Republic 2–1 Czechia
             </p>
             <span>•</span>
             <p aria-hidden="true" data-i18n="ticker">
-              The verdict just flipped — 41 countries are voting right now
+              Final: Mexico 2–0 South Africa · Korea Republic 2–1 Czechia
             </p>
           </div>
         </div>
@@ -67,21 +67,21 @@
         <div class="court-grid">
           <div class="hero-panel">
             <div class="match-meta">
-              <span class="live-pill"><i></i> LIVE · 63'</span>
+              <span class="live-pill">FINAL · VERIFIED</span>
               <span data-i18n="groupStage">Group stage · Match 18</span>
             </div>
 
-            <div class="scoreboard" aria-label="Brazil 1, Morocco 1">
+            <div class="scoreboard" aria-label="Mexico 2, South Africa 0">
               <div class="team team-left">
-                <span class="flag" aria-hidden="true">🇧🇷</span>
-                <strong data-i18n="brazil">Brazil</strong>
+                <span class="flag" aria-hidden="true">🇲🇽</span>
+                <strong data-i18n="mexico">Mexico</strong>
               </div>
               <div class="score">
-                <span>1</span><i>:</i><span>1</span>
+                <span>2</span><i>:</i><span>0</span>
               </div>
               <div class="team team-right">
-                <span class="flag" aria-hidden="true">🇲🇦</span>
-                <strong data-i18n="morocco">Morocco</strong>
+                <span class="flag" aria-hidden="true">🇿🇦</span>
+                <strong data-i18n="southAfrica">South Africa</strong>
               </div>
             </div>
 
@@ -97,7 +97,7 @@
               <button class="vote-option saint" type="button" data-vote="saint">
                 <span class="vote-kicker" data-i18n="saintSide">Saint side</span>
                 <strong data-i18n="absolutely">Absolutely</strong>
-                <small data-i18n="clearPenalty">Clear penalty. No debate.</small>
+                <small data-i18n="clearPenalty">A convincing opening statement.</small>
                 <span class="vote-arrow" aria-hidden="true">↗</span>
               </button>
               <button class="vote-option villain" type="button" data-vote="villain">
@@ -113,31 +113,20 @@
               <div class="result-heading">
                 <div>
                   <span data-i18n="worldSplit">The world is split</span>
-                  <strong><span id="totalVotes">4,892,771</span> <small data-i18n="verdicts">verdicts</small></strong>
+              <strong data-i18n="verdictRecorded">Your verdict is recorded</strong>
                 </div>
                 <button class="share-button" id="shareButton" type="button">
                   <span data-i18n="shareVerdict">Share verdict</span>
                   <b aria-hidden="true">↗</b>
                 </button>
               </div>
-              <div class="split-numbers">
-                <strong class="gold"><span id="saintPercent">51</span>%</strong>
-                <span data-i18n="versus">versus</span>
-                <strong class="red"><span id="villainPercent">49</span>%</strong>
-              </div>
-              <div class="split-bar" aria-hidden="true">
-                <span class="split-saint" id="saintBar"></span>
-                <i></i>
-                <span class="split-villain" id="villainBar"></span>
-              </div>
-              <p class="minority-copy" id="minorityCopy"></p>
             </div>
           </div>
 
           <aside class="pulse-panel">
             <div class="pulse-heading">
               <span data-i18n="globalPulse">Global pulse</span>
-              <strong>41 <small data-i18n="countriesLive">countries live</small></strong>
+              <strong>2–0 <small data-i18n="officialResult">official result</small></strong>
             </div>
 
             <div class="globe-visual" aria-hidden="true">
@@ -148,8 +137,8 @@
                 <span class="pulse-dot p2"></span>
                 <span class="pulse-dot p3"></span>
                 <span class="pulse-dot p4"></span>
-                <b>51<span>%</span></b>
-                <small data-i18n="sayPenalty">say penalty</small>
+                <b>FT</b>
+                <small data-i18n="verifiedByFifa">verified by FIFA</small>
               </div>
             </div>
 
@@ -159,15 +148,15 @@
                 <i>LIVE</i>
               </div>
               <div class="clash-row">
-                <span>🇧🇷 <b data-i18n="brazil">Brazil</b></span>
-                <strong class="gold">82% YES</strong>
+                <span>🇲🇽 <b>J. Quiñones</b></span>
+                <strong class="gold">GOAL</strong>
               </div>
-              <div class="clash-meter"><i style="width: 82%"></i></div>
+              <div class="clash-meter"><i style="width: 100%"></i></div>
               <div class="clash-row">
-                <span>🇯🇵 <b data-i18n="japan">Japan</b></span>
-                <strong class="red">19% YES</strong>
+                <span>🇲🇽 <b>R. Jiménez</b></span>
+                <strong class="gold">GOAL</strong>
               </div>
-              <div class="clash-meter red-meter"><i style="width: 19%"></i></div>
+              <div class="clash-meter"><i style="width: 100%"></i></div>
               <p data-i18n="nationCopy">These two nations could not disagree more.</p>
             </div>
 
@@ -179,6 +168,49 @@
               <b aria-hidden="true">→</b>
             </button>
           </aside>
+        </div>
+      </section>
+
+      <section class="fan-zone" id="fanZone">
+        <div class="fan-zone-shell">
+          <div class="fan-zone-heading">
+            <div>
+              <span class="eyebrow" data-i18n="fanZoneEyebrow">FAN WAR ROOM</span>
+              <h2 data-i18n="fanZoneTitle">球迷互喷区</h2>
+            </div>
+            <div class="fan-identity">
+              <span data-i18n="yourFanId">你的匿名球迷号</span>
+              <strong id="fanId">连接中...</strong>
+            </div>
+          </div>
+
+          <form class="comment-composer" id="commentForm">
+            <div class="composer-avatar" id="composerAvatar">VS</div>
+            <div class="composer-main">
+              <div class="reply-target" id="replyTarget" hidden>
+                <span id="replyTargetText"></span>
+                <button type="button" id="cancelReply" aria-label="Cancel reply">×</button>
+              </div>
+              <textarea
+                id="commentInput"
+                maxlength="500"
+                rows="3"
+                data-i18n-placeholder="commentPlaceholder"
+                placeholder="说出你的观点，不服就来辩。"
+              ></textarea>
+              <div class="composer-actions">
+                <span><b id="commentCount">0</b>/500</span>
+                <button type="submit" id="commentSubmit" disabled>
+                  <span data-i18n="postComment">发布观点</span><b>↗</b>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="comment-status" id="commentStatus" role="status" aria-live="polite">
+            <span data-i18n="loadingComments">正在连接球迷现场...</span>
+          </div>
+          <div class="comment-feed" id="commentFeed"></div>
         </div>
       </section>
 
@@ -339,22 +371,25 @@
             <span>VILE<span>SAINT</span></span>
             <b>LIVE VERDICT</b>
           </div>
-          <div class="poster-match">🇧🇷 BRA 1 : 1 MAR 🇲🇦 · 63'</div>
+          <div class="poster-match">🇲🇽 MEX 2 : 0 RSA 🇿🇦 · FINAL</div>
           <h2 data-i18n="question">WAS THAT REALLY A PENALTY?</h2>
           <div class="poster-choice" id="posterChoice">I SAID: ABSOLUTELY.</div>
-          <div class="poster-result"><strong>51%</strong><span data-i18n="worldAgrees">of the world agrees</span></div>
+          <div class="poster-result"><strong>2–0</strong><span data-i18n="officialResult">official result</span></div>
           <div class="poster-bottom">
-            <img
-              class="qr-code"
-              id="qrCode"
-              src="./assets/vilesaint-qr.png"
-              alt="Scan to open VileSaint and cast your verdict"
-              width="630"
-              height="630"
-            />
-            <div>
+            <div class="qr-frame">
+              <img
+                class="qr-code"
+                id="qrCode"
+                src="./assets/vilesaint-qr.png"
+                alt="Scan to open VileSaint and cast your verdict"
+                width="630"
+                height="630"
+              />
+            </div>
+            <div class="poster-cta">
               <b data-i18n="scanVote">SCAN TO VOTE</b>
               <span>vilesaint.com</span>
+              <small>JOIN THE GLOBAL VERDICT ↗</small>
             </div>
           </div>
         </div>
@@ -377,6 +412,7 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script src="./app.js?v=20260613-comments"></script>
   </body>
 </html>
