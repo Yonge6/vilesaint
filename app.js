@@ -51,13 +51,18 @@ const copy = {
     scanVote: "Scan to vote", yourVerdict: "Your verdict", makeNoise: "Make some noise.",
     verdictPrefix: "I said",
     shareCopy: "Send this verdict to someone who thinks you're wrong.",
-    shareNow: "Share now", copyLink: "Copy link",
+    shareNow: "Share now", copyLink: "Copy link", closeShare: "Close",
+    saveImage: "Save image", savingImage: "Creating image...", imageSaved: "Image ready. Save it to Photos.",
+    imageDownloaded: "Poster downloaded.", sharingComment: "Creating comment card...", imageFailed: "Could not create the image.",
     minoritySaint: "You joined the narrow majority. The argument is far from over.",
     minorityVillain: "You joined the global minority. Stand your ground.",
     copied: "Link copied to clipboard.", nextLoaded: "Next case loaded.",
     fanZoneEyebrow: "FAN WAR ROOM", fanZoneTitle: "Fan war room",
+    personOnTrial: "PERSON ON TRIAL", commentSubject: "Raúl Jiménez",
+    commentTopic: "Match-winner or home advantage beneficiary?",
+    commentSubjectFact: "He scored in Mexico's verified 2–0 win over South Africa.", debateOpen: "DEBATE OPEN",
     yourFanId: "Your anonymous fan ID", connectingFan: "Connecting...",
-    commentPlaceholder: "Say what you think. Back it up if challenged.",
+    commentPlaceholder: "What is your verdict on Raúl Jiménez?",
     postComment: "Post", loadingComments: "Connecting to the fan room...",
     commentsEmpty: "No takes yet. Start the argument.", reply: "Reply", like: "Like", shareComment: "Share",
     replyingTo: "Replying to", cancelReply: "Cancel reply", you: "YOU",
@@ -95,13 +100,18 @@ const copy = {
     scanVote: "扫码参与审判", yourVerdict: "你的判决", makeNoise: "让全世界听见。",
     verdictPrefix: "我的判决",
     shareCopy: "把这份判决发给那个认为你错了的人。",
-    shareNow: "立即分享", copyLink: "复制链接",
+    shareNow: "立即分享", copyLink: "复制链接", closeShare: "关闭",
+    saveImage: "保存图片到相册", savingImage: "正在生成高清图片...", imageSaved: "图片已生成，请选择“存储到照片”。",
+    imageDownloaded: "分享海报已下载。", sharingComment: "正在生成评论分享图...", imageFailed: "图片生成失败，请稍后重试。",
     minoritySaint: "你加入了微弱多数，争论远未结束。",
     minorityVillain: "你站在全球少数派，别退让。",
     copied: "链接已复制。", nextLoaded: "下一案件已加载。",
     fanZoneEyebrow: "球迷战场", fanZoneTitle: "球迷互喷区",
+    personOnTrial: "本期人物", commentSubject: "劳尔·希门尼斯",
+    commentTopic: "关键先生，还是吃了东道主红利？",
+    commentSubjectFact: "他在墨西哥2–0战胜南非的比赛中取得进球。", debateOpen: "争议开放",
     yourFanId: "你的匿名球迷号", connectingFan: "连接中...",
-    commentPlaceholder: "说出你的观点，不服就来辩。",
+    commentPlaceholder: "你怎么评价劳尔·希门尼斯？不服就来辩。",
     postComment: "发布观点", loadingComments: "正在连接球迷现场...",
     commentsEmpty: "还没人开喷，你来打响第一枪。", reply: "回复", like: "赞", shareComment: "分享",
     replyingTo: "正在回复", cancelReply: "取消回复", you: "本人",
@@ -138,13 +148,18 @@ const copy = {
     scanVote: "Escanea para votar", yourVerdict: "Tu veredicto", makeNoise: "Haz ruido.",
     verdictPrefix: "Mi veredicto",
     shareCopy: "Envía este veredicto a quien cree que estás equivocado.",
-    shareNow: "Compartir ahora", copyLink: "Copiar enlace",
+    shareNow: "Compartir ahora", copyLink: "Copiar enlace", closeShare: "Cerrar",
+    saveImage: "Guardar imagen", savingImage: "Creando imagen...", imageSaved: "Imagen lista. Guárdala en Fotos.",
+    imageDownloaded: "Póster descargado.", sharingComment: "Creando tarjeta de comentario...", imageFailed: "No se pudo crear la imagen.",
     minoritySaint: "Te uniste a la estrecha mayoría. La discusión sigue.",
     minorityVillain: "Te uniste a la minoría global. Mantén tu posición.",
     copied: "Enlace copiado.", nextLoaded: "Siguiente caso cargado.",
     fanZoneEyebrow: "GUERRA DE AFICIONES", fanZoneTitle: "Zona de debate",
+    personOnTrial: "PERSONA A JUICIO", commentSubject: "Raúl Jiménez",
+    commentTopic: "¿Figura decisiva o beneficiado por jugar en casa?",
+    commentSubjectFact: "Marcó en la victoria verificada de México por 2–0 ante Sudáfrica.", debateOpen: "DEBATE ABIERTO",
     yourFanId: "Tu ID anónimo", connectingFan: "Conectando...",
-    commentPlaceholder: "Di lo que piensas y defiéndelo.",
+    commentPlaceholder: "¿Cuál es tu veredicto sobre Raúl Jiménez?",
     postComment: "Publicar", loadingComments: "Conectando con la grada...",
     commentsEmpty: "Todavía no hay opiniones. Abre el debate.", reply: "Responder", like: "Me gusta", shareComment: "Compartir",
     replyingTo: "Respondiendo a", cancelReply: "Cancelar", you: "TÚ",
@@ -181,13 +196,18 @@ const copy = {
     scanVote: "スキャンして投票", yourVerdict: "あなたの判決", makeNoise: "世界に示せ。",
     verdictPrefix: "私の判決",
     shareCopy: "あなたが間違っていると思う相手に送ろう。",
-    shareNow: "今すぐシェア", copyLink: "リンクをコピー",
+    shareNow: "今すぐシェア", copyLink: "リンクをコピー", closeShare: "閉じる",
+    saveImage: "画像を保存", savingImage: "画像を作成中...", imageSaved: "画像を作成しました。「写真に保存」を選択してください。",
+    imageDownloaded: "ポスターをダウンロードしました。", sharingComment: "コメント画像を作成中...", imageFailed: "画像を作成できませんでした。",
     minoritySaint: "わずかな多数派に加わりました。議論はまだ続きます。",
     minorityVillain: "世界の少数派です。その立場を貫こう。",
     copied: "リンクをコピーしました。", nextLoaded: "次のケースを読み込みました。",
     fanZoneEyebrow: "ファン討論場", fanZoneTitle: "ファンバトル",
+    personOnTrial: "今回の人物", commentSubject: "ラウール・ヒメネス",
+    commentTopic: "勝負を決めた男か、ホームの恩恵か？",
+    commentSubjectFact: "メキシコが南アフリカに2–0で勝利した試合で得点しました。", debateOpen: "議論受付中",
     yourFanId: "匿名ファンID", connectingFan: "接続中...",
-    commentPlaceholder: "意見を書いて、反論に備えよう。",
+    commentPlaceholder: "ラウール・ヒメネスへの判決を書こう。",
     postComment: "投稿", loadingComments: "ファンルームに接続中...",
     commentsEmpty: "まだ投稿はありません。最初の意見をどうぞ。", reply: "返信", like: "いいね", shareComment: "共有",
     replyingTo: "返信先", cancelReply: "返信を取消", you: "自分",
@@ -224,13 +244,18 @@ const copy = {
     scanVote: "스캔하고 투표", yourVerdict: "당신의 판결", makeNoise: "세상에 알려라.",
     verdictPrefix: "나의 판결",
     shareCopy: "당신이 틀렸다고 생각하는 사람에게 보내세요.",
-    shareNow: "지금 공유", copyLink: "링크 복사",
+    shareNow: "지금 공유", copyLink: "링크 복사", closeShare: "닫기",
+    saveImage: "사진으로 저장", savingImage: "이미지 생성 중...", imageSaved: "이미지가 준비되었습니다. 사진 앱에 저장하세요.",
+    imageDownloaded: "포스터를 다운로드했습니다.", sharingComment: "댓글 공유 이미지 생성 중...", imageFailed: "이미지를 만들 수 없습니다.",
     minoritySaint: "근소한 다수에 합류했습니다. 논쟁은 끝나지 않았습니다.",
     minorityVillain: "세계의 소수 편입니다. 입장을 지키세요.",
     copied: "링크가 복사되었습니다.", nextLoaded: "다음 사건을 불러왔습니다.",
     fanZoneEyebrow: "팬 토론장", fanZoneTitle: "팬 배틀",
+    personOnTrial: "오늘의 인물", commentSubject: "라울 히메네스",
+    commentTopic: "승부를 가른 선수인가, 홈 이점의 수혜자인가?",
+    commentSubjectFact: "멕시코가 남아공을 2–0으로 이긴 경기에서 득점했습니다.", debateOpen: "토론 진행 중",
     yourFanId: "익명 팬 ID", connectingFan: "연결 중...",
-    commentPlaceholder: "당신의 의견을 남기고 반론에 답하세요.",
+    commentPlaceholder: "라울 히메네스에 대한 판결을 남겨주세요.",
     postComment: "게시", loadingComments: "팬 공간에 연결 중...",
     commentsEmpty: "아직 의견이 없습니다. 첫 논쟁을 시작하세요.", reply: "답글", like: "좋아요", shareComment: "공유",
     replyingTo: "답글 대상", cancelReply: "답글 취소", you: "나",
@@ -242,7 +267,7 @@ const copy = {
 const fallbackCopy = copy.en;
 const SUPABASE_URL = "https://vzbjghfepucqffgzuzdj.supabase.co";
 const SUPABASE_KEY = "sb_publishable_dLbm8KnThyH-sch7aGRS0A_q_CEuO6a";
-const COMMENT_CASE = "mexico-south-africa-2026";
+const COMMENT_CASE = "raul-jimenez-mexico-south-africa-2026";
 const state = {
   language: localStorage.getItem("vs-language") || detectLanguage(),
   vote: localStorage.getItem("vs-vote") || null,
@@ -265,6 +290,7 @@ const composerAvatar = document.querySelector("#composerAvatar");
 const replyTarget = document.querySelector("#replyTarget");
 const replyTargetText = document.querySelector("#replyTargetText");
 const cancelReply = document.querySelector("#cancelReply");
+const savePosterButton = document.querySelector("#savePoster");
 let commentsClient;
 let commentUser;
 let commentProfile;
@@ -378,6 +404,170 @@ async function shareCurrentVerdict() {
   await copyCurrentLink();
 }
 
+function wrapCanvasText(context, text, maxWidth) {
+  const chars = [...text];
+  const lines = [];
+  let line = "";
+  chars.forEach((char) => {
+    const candidate = line + char;
+    if (line && context.measureText(candidate).width > maxWidth) {
+      lines.push(line.trim());
+      line = char;
+    } else {
+      line = candidate;
+    }
+  });
+  if (line.trim()) lines.push(line.trim());
+  return lines;
+}
+
+function canvasToPngBlob(canvas) {
+  const dataUrl = canvas.toDataURL("image/png");
+  const binary = atob(dataUrl.split(",")[1]);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+  return new Blob([bytes], { type: "image/png" });
+}
+
+function downloadImageBlob(blob, filename) {
+  const link = document.createElement("a");
+  const objectUrl = URL.createObjectURL(blob);
+  link.href = objectUrl;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+}
+
+function createSharePosterBlob() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1350;
+  const context = canvas.getContext("2d");
+  const isCjk = /^(zh|ja|ko)/.test(state.language);
+  const displayFont = isCjk ? '"Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif' : '"Barlow Condensed", sans-serif';
+  const bodyFont = '"Noto Sans", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif';
+
+  context.fillStyle = "#080808";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  const glow = context.createRadialGradient(210, 180, 20, 210, 180, 650);
+  glow.addColorStop(0, "rgba(255,201,40,0.20)");
+  glow.addColorStop(1, "rgba(255,201,40,0)");
+  context.fillStyle = glow;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.strokeStyle = "rgba(243,239,229,0.055)";
+  context.lineWidth = 2;
+  for (let x = -500; x < 1400; x += 90) {
+    context.beginPath();
+    context.moveTo(x, 0);
+    context.lineTo(x + 500, 1350);
+    context.stroke();
+  }
+  context.strokeStyle = "#ff304a";
+  context.lineWidth = 18;
+  context.beginPath();
+  context.moveTo(760, 9);
+  context.lineTo(1071, 9);
+  context.lineTo(1071, 320);
+  context.stroke();
+
+  context.textBaseline = "top";
+  context.fillStyle = "#f3efe5";
+  context.font = `900 58px ${displayFont}`;
+  context.fillText("VILE", 74, 68);
+  const vileWidth = context.measureText("VILE").width;
+  context.fillStyle = "#ffc928";
+  context.fillText("SAINT", 74 + vileWidth, 68);
+  context.fillStyle = "#ff304a";
+  context.font = `800 24px ${bodyFont}`;
+  context.textAlign = "right";
+  context.fillText("LIVE VERDICT", 1006, 86);
+
+  context.textAlign = "left";
+  context.fillStyle = "#aaa69b";
+  context.font = `800 25px ${bodyFont}`;
+  context.fillText("🇲🇽 MEX 2 : 0 RSA 🇿🇦 · FINAL", 74, 235);
+
+  context.fillStyle = "#f3efe5";
+  context.font = `900 ${isCjk ? 78 : 94}px ${displayFont}`;
+  const questionLines = wrapCanvasText(context, currentCopy().question, 930).slice(0, 3);
+  const questionLineHeight = isCjk ? 96 : 88;
+  questionLines.forEach((line, index) => context.fillText(line, 74, 304 + index * questionLineHeight));
+  const questionBottom = 304 + questionLines.length * questionLineHeight;
+
+  const choice = state.vote === "villain" ? currentCopy().never : currentCopy().absolutely;
+  const choiceText = `${currentCopy().verdictPrefix || fallbackCopy.verdictPrefix}${isCjk ? "：" : ": "}${choice}${isCjk ? "。" : "."}`;
+  context.font = `900 ${isCjk ? 38 : 44}px ${displayFont}`;
+  const choiceWidth = Math.min(context.measureText(choiceText).width + 48, 930);
+  context.fillStyle = "#ffc928";
+  context.fillRect(74, questionBottom + 24, choiceWidth, 72);
+  context.fillStyle = "#080808";
+  context.fillText(choiceText, 96, questionBottom + 37);
+
+  context.fillStyle = "#ffc928";
+  context.font = `900 170px ${displayFont}`;
+  context.fillText("2–0", 74, questionBottom + 150);
+  context.fillStyle = "#aaa69b";
+  context.font = `800 25px ${bodyFont}`;
+  context.fillText(currentCopy().officialResult.toUpperCase(), 360, questionBottom + 248);
+
+  context.strokeStyle = "rgba(243,239,229,0.18)";
+  context.lineWidth = 2;
+  context.beginPath();
+  context.moveTo(74, 1035);
+  context.lineTo(1006, 1035);
+  context.stroke();
+
+  const qrImage = document.querySelector("#qrCode");
+  context.fillStyle = "#ff304a";
+  context.fillRect(90, 1080, 238, 238);
+  context.fillStyle = "#f3efe5";
+  context.fillRect(74, 1064, 238, 238);
+  if (qrImage.complete && qrImage.naturalWidth) context.drawImage(qrImage, 88, 1078, 210, 210);
+
+  context.fillStyle = "#ffc928";
+  context.font = `900 52px ${displayFont}`;
+  context.fillText(currentCopy().scanVote, 360, 1095);
+  context.fillStyle = "#aaa69b";
+  context.font = `700 28px ${bodyFont}`;
+  context.fillText("vilesaint.com", 360, 1165);
+  context.fillStyle = "#f3efe5";
+  context.font = `800 22px ${bodyFont}`;
+  context.fillText("JOIN THE GLOBAL VERDICT ↗", 360, 1230);
+
+  return canvasToPngBlob(canvas);
+}
+
+async function saveSharePoster() {
+  const originalLabel = savePosterButton.querySelector("span").textContent;
+  savePosterButton.disabled = true;
+  savePosterButton.querySelector("span").textContent = currentCopy().savingImage;
+  try {
+    const blob = createSharePosterBlob();
+    const file = new File([blob], "vilesaint-verdict.png", { type: "image/png" });
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: "VileSaint Verdict" });
+        showToast(currentCopy().imageSaved);
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+    downloadImageBlob(blob, "vilesaint-verdict.png");
+    showToast(currentCopy().imageDownloaded);
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error("VileSaint poster:", error);
+      showToast(currentCopy().imageFailed);
+    }
+  } finally {
+    savePosterButton.disabled = false;
+    savePosterButton.querySelector("span").textContent = originalLabel;
+  }
+}
+
 async function copyCurrentLink() {
   try {
     await navigator.clipboard.writeText(window.location.href);
@@ -469,25 +659,137 @@ function renderCommentCard(comment, isReply = false) {
 async function shareComment(comment) {
   const url = new URL(window.location.href);
   url.hash = `comment-${comment.id}`;
-  const shareData = {
-    title: `${comment.fanTag} · VileSaint`,
-    text: `"${comment.body.slice(0, 140)}"`,
-    url: url.toString(),
-  };
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-      return;
-    } catch (error) {
-      if (error.name === "AbortError") return;
+  showToast(currentCopy().sharingComment);
+  try {
+    const blob = createCommentShareBlob(comment);
+    const file = new File([blob], `vilesaint-comment-${comment.id}.png`, { type: "image/png" });
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: `${comment.fanTag} · VileSaint`,
+          text: comment.body.slice(0, 140),
+          url: url.toString(),
+        });
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    downloadImageBlob(blob, `vilesaint-comment-${comment.id}.png`);
+    await navigator.clipboard.writeText(url.toString());
+    showToast(`${currentCopy().imageDownloaded} ${currentCopy().commentLinkCopied}`);
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error("VileSaint comment poster:", error);
+      showToast(currentCopy().imageFailed);
     }
   }
-  try {
-    await navigator.clipboard.writeText(url.toString());
-    showToast(currentCopy().commentLinkCopied);
-  } catch {
-    showToast(url.toString());
+}
+
+function createCommentShareBlob(comment) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1350;
+  const context = canvas.getContext("2d");
+  const isCjk = /^(zh|ja|ko)/.test(state.language);
+  const displayFont = isCjk ? '"Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif' : '"Barlow Condensed", sans-serif';
+  const bodyFont = '"Noto Sans", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif';
+
+  context.fillStyle = "#080808";
+  context.fillRect(0, 0, 1080, 1350);
+  const redGlow = context.createRadialGradient(900, 180, 20, 900, 180, 620);
+  redGlow.addColorStop(0, "rgba(255,48,74,0.22)");
+  redGlow.addColorStop(1, "rgba(255,48,74,0)");
+  context.fillStyle = redGlow;
+  context.fillRect(0, 0, 1080, 1350);
+
+  context.strokeStyle = "rgba(243,239,229,0.05)";
+  context.lineWidth = 2;
+  for (let y = 0; y < 1350; y += 52) {
+    context.beginPath();
+    context.moveTo(0, y);
+    context.lineTo(1080, y);
+    context.stroke();
   }
+  context.fillStyle = "#ff304a";
+  context.fillRect(0, 0, 18, 1350);
+
+  context.textBaseline = "top";
+  context.fillStyle = "#f3efe5";
+  context.font = `900 60px ${displayFont}`;
+  context.fillText("VILE", 74, 70);
+  const vileWidth = context.measureText("VILE").width;
+  context.fillStyle = "#ffc928";
+  context.fillText("SAINT", 74 + vileWidth, 70);
+  context.fillStyle = "#ff304a";
+  context.textAlign = "right";
+  context.font = `800 25px ${bodyFont}`;
+  context.fillText("FAN WAR ROOM", 1006, 91);
+
+  context.textAlign = "left";
+  context.fillStyle = "#aaa69b";
+  context.font = `800 25px ${bodyFont}`;
+  context.fillText(`${currentCopy().commentSubject.toUpperCase()} · PERSON ON TRIAL`, 74, 205);
+
+  context.fillStyle = "#ffc928";
+  context.beginPath();
+  context.arc(126, 325, 52, 0, Math.PI * 2);
+  context.fill();
+  context.fillStyle = "#080808";
+  context.textAlign = "center";
+  context.font = `900 34px ${displayFont}`;
+  context.fillText(comment.fanTag.slice(-2), 126, 305);
+
+  context.textAlign = "left";
+  context.fillStyle = "#f3efe5";
+  context.font = `800 34px ${bodyFont}`;
+  context.fillText(comment.fanTag, 205, 292);
+  context.fillStyle = "#aaa69b";
+  context.font = `600 23px ${bodyFont}`;
+  context.fillText(relativeTime(comment.created_at), 205, 340);
+
+  context.fillStyle = "#ff304a";
+  context.font = `900 32px ${bodyFont}`;
+  context.fillText(currentCopy().commentTopic, 74, 420);
+
+  context.fillStyle = "#f3efe5";
+  let fontSize = isCjk ? 62 : 68;
+  let commentLines = [];
+  do {
+    context.font = `800 ${fontSize}px ${bodyFont}`;
+    commentLines = wrapCanvasText(context, comment.body, 900);
+    fontSize -= 4;
+  } while (commentLines.length > 7 && fontSize > 38);
+  const lineHeight = fontSize + 26;
+  commentLines.slice(0, 7).forEach((line, index) => context.fillText(line, 74, 485 + index * lineHeight));
+
+  context.strokeStyle = "rgba(243,239,229,0.18)";
+  context.lineWidth = 2;
+  context.beginPath();
+  context.moveTo(74, 1050);
+  context.lineTo(1006, 1050);
+  context.stroke();
+
+  const qrImage = document.querySelector("#qrCode");
+  context.fillStyle = "#ff304a";
+  context.fillRect(90, 1095, 220, 220);
+  context.fillStyle = "#f3efe5";
+  context.fillRect(74, 1079, 220, 220);
+  if (qrImage.complete && qrImage.naturalWidth) context.drawImage(qrImage, 87, 1092, 194, 194);
+
+  context.fillStyle = "#ffc928";
+  context.font = `900 48px ${displayFont}`;
+  context.fillText(currentCopy().scanVote, 340, 1110);
+  context.fillStyle = "#aaa69b";
+  context.font = `700 27px ${bodyFont}`;
+  context.fillText("vilesaint.com", 340, 1175);
+  context.fillStyle = "#f3efe5";
+  context.font = `800 22px ${bodyFont}`;
+  context.fillText("READ · REPLY · SHARE YOUR VERDICT ↗", 340, 1235);
+
+  return canvasToPngBlob(canvas);
 }
 
 function focusSharedComment() {
@@ -658,7 +960,15 @@ async function initComments() {
   commentUser = sessionData.session?.user || sessionData.user;
   if (!commentUser) throw new Error("Anonymous session unavailable");
 
-  commentProfile = await getFanProfile();
+  try {
+    commentProfile = await getFanProfile();
+  } catch {
+    await commentsClient.auth.signOut();
+    const { data, error } = await commentsClient.auth.signInAnonymously();
+    if (error) throw error;
+    commentUser = data.user;
+    commentProfile = await getFanProfile();
+  }
   fanId.textContent = commentProfile.fan_tag;
   composerAvatar.textContent = commentProfile.fan_tag.slice(-2);
   updateComposerState();
@@ -704,6 +1014,7 @@ document.querySelector("#shareButton").addEventListener("click", openShare);
 document.querySelector("#mobileShare").addEventListener("click", openShare);
 document.querySelector("#shareClose").addEventListener("click", () => shareDialog.close());
 document.querySelector("#nativeShare").addEventListener("click", shareCurrentVerdict);
+savePosterButton.addEventListener("click", saveSharePoster);
 document.querySelector("#copyLink").addEventListener("click", copyCurrentLink);
 document.querySelector("#nextCase").addEventListener("click", () => {
   showToast(currentCopy().nextLoaded);
