@@ -1598,20 +1598,32 @@ dialog::backdrop {
 
 @media (max-width: 720px) {
   body {
-    padding-bottom: 66px;
+    padding-bottom: 72px;
   }
 
   .site-header {
-    height: 62px;
+    height: 58px;
+    padding: 0 14px;
   }
 
   .brand-mark {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .brand-name {
-    font-size: 20px;
+    font-size: 19px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .language-trigger {
+    height: 36px;
+    gap: 7px;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
   .live-orbit {
@@ -1619,20 +1631,26 @@ dialog::backdrop {
   }
 
   .breaking-ticker {
-    height: 35px;
+    height: 34px;
   }
 
   .ticker-label {
-    min-width: 94px;
+    min-width: 76px;
     font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .ticker-track {
+    gap: 38px;
   }
 
   .ticker-track p {
     font-size: 10px;
+    letter-spacing: 0.02em;
   }
 
   .hero-panel {
-    padding: 24px 16px 32px;
+    padding: 20px 16px 28px;
   }
 
   .match-meta > span:last-child {
@@ -1640,29 +1658,30 @@ dialog::backdrop {
   }
 
   .scoreboard {
-    gap: 9px;
-    margin: 22px 0 30px;
-    padding: 18px 0;
+    gap: 8px;
+    margin: 18px 0 24px;
+    padding: 15px 0;
   }
 
   .team {
-    gap: 7px;
-    font-size: 20px;
+    gap: 6px;
+    font-size: 19px;
   }
 
   .team strong {
-    max-width: 78px;
+    max-width: 92px;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .flag {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .score {
-    gap: 7px;
-    font-size: 42px;
+    gap: 6px;
+    font-size: 38px;
   }
 
   .score i {
@@ -1670,32 +1689,48 @@ dialog::backdrop {
   }
 
   .question-block h1 {
-    margin-top: 9px;
-    font-size: clamp(50px, 17vw, 74px);
-    line-height: 0.8;
+    margin: 9px 0 10px;
+    font-size: clamp(44px, 14vw, 62px);
+    line-height: 0.88;
   }
 
   .question-block p {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.55;
   }
 
   .vote-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 24px;
     clip-path: none;
   }
 
   .vote-option {
-    min-height: 118px;
-    padding: 20px 24px;
+    min-height: 110px;
+    padding: 17px 20px 16px;
   }
 
   .vote-option strong {
-    font-size: 48px;
+    font-size: 42px;
+    line-height: 0.96;
+  }
+
+  .vote-kicker {
+    margin-bottom: 8px;
+  }
+
+  .vote-option small {
+    margin-top: 8px;
+    padding-right: 30px;
+    font-size: 11px;
+    line-height: 1.4;
   }
 
   .vote-arrow {
-    top: 15px;
-    right: 20px;
+    top: 14px;
+    right: 16px;
+    font-size: 22px;
   }
 
   .verdict-stamp {
@@ -1735,11 +1770,12 @@ dialog::backdrop {
 
   .pulse-panel {
     display: block;
-    padding: 30px 16px;
+    padding: 28px 16px 34px;
   }
 
   .globe-visual {
-    margin: 15px auto 25px;
+    margin: 8px auto 18px;
+    transform: scale(0.9);
   }
 
   .section-shell {
@@ -1816,7 +1852,7 @@ dialog::backdrop {
     left: 0;
     z-index: 45;
     display: grid;
-    height: 66px;
+    height: 72px;
     grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid var(--line);
     background: rgba(8, 8, 8, 0.94);
@@ -1843,18 +1879,26 @@ dialog::backdrop {
   }
 
   .mobile-nav small {
-    font-size: 8px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 4px;
+    font-size: 9px;
     font-weight: 800;
+    line-height: 1.2;
+    text-overflow: ellipsis;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .language-dialog {
-    width: calc(100vw - 16px);
-    max-height: calc(100vh - 80px);
+    width: calc(100vw - 12px);
+    max-height: calc(100dvh - 24px);
+    margin: auto 6px 6px;
+    border-bottom: 0;
   }
 
   .language-dialog form {
-    padding: 20px;
+    padding: 20px 16px 24px;
   }
 
   .language-grid {
@@ -1887,6 +1931,73 @@ dialog::backdrop {
   .share-close {
     top: 15px;
     right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .language-option {
+    min-height: 54px;
+    padding: 10px 14px;
+  }
+
+  .dialog-head h2 {
+    font-size: 34px;
+    line-height: 0.95;
+  }
+}
+
+@media (max-width: 720px) {
+  html[lang^="zh"] .question-block h1 {
+    max-width: 9em;
+    font-family: "Noto Sans SC", var(--body);
+    font-size: clamp(42px, 12.4vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.07em;
+    text-wrap: balance;
+  }
+
+  html[lang^="zh"] .question-block p {
+    max-width: 29em;
+    line-height: 1.7;
+  }
+
+  html[lang^="zh"] .vote-option strong {
+    font-family: "Noto Sans SC", var(--body);
+    font-size: clamp(34px, 10vw, 42px);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+
+  html[lang^="zh"] .vote-kicker,
+  html[lang^="zh"] .vote-option small {
+    letter-spacing: 0.02em;
+  }
+
+  html[lang^="zh"] .section-header h2,
+  html[lang^="zh"] .ranking-title h2 {
+    font-family: "Noto Sans SC", var(--body);
+    font-size: 46px;
+    line-height: 1.08;
+    letter-spacing: -0.06em;
+  }
+
+  html[lang^="zh"] .story-card h3 {
+    font-family: "Noto Sans SC", var(--body);
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -0.05em;
+  }
+
+  html[lang^="zh"] .mobile-nav small {
+    font-size: 10px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 }
 
