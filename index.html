@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080808" />
+    <meta
+      name="description"
+      content="VileSaint is the internet's court for football. Cast your verdict on the moments dividing the world."
+    />
+    <meta property="og:title" content="VileSaint — Cast Your Verdict" />
+    <meta
+      property="og:description"
+      content="Every match creates a saint and a villain. Which side are you on?"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vilesaint.com/" />
+    <title>VileSaint — The Internet's Court for Football</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;800&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Sans+KR:wght@400;600;800&family=Noto+Sans+SC:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#court" aria-label="VileSaint home">
+        <span class="brand-mark"><span>V</span><span>S</span></span>
+        <span class="brand-name">VILE<span>SAINT</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#court" data-i18n="navCourt">Live Court</a>
+        <a href="#stories" data-i18n="navStories">Breaking</a>
+        <a href="#rankings" data-i18n="navRankings">Rankings</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="live-orbit" aria-label="Live status">
+          <i></i><span data-i18n="liveNow">Live now</span>
+        </div>
+        <button class="language-trigger" id="languageTrigger" type="button" aria-haspopup="dialog">
+          <span aria-hidden="true">◎</span>
+          <strong id="currentLanguage">EN</strong>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="court" id="court">
+        <div class="breaking-ticker" aria-label="Breaking update">
+          <span class="ticker-label" data-i18n="breaking">Breaking</span>
+          <div class="ticker-track">
+            <p data-i18n="ticker">
+              The verdict just flipped — 41 countries are voting right now
+            </p>
+            <span>•</span>
+            <p aria-hidden="true" data-i18n="ticker">
+              The verdict just flipped — 41 countries are voting right now
+            </p>
+          </div>
+        </div>
+
+        <div class="court-grid">
+          <div class="hero-panel">
+            <div class="match-meta">
+              <span class="live-pill"><i></i> LIVE · 63'</span>
+              <span data-i18n="groupStage">Group stage · Match 18</span>
+            </div>
+
+            <div class="scoreboard" aria-label="Brazil 1, Morocco 1">
+              <div class="team team-left">
+                <span class="flag" aria-hidden="true">🇧🇷</span>
+                <strong data-i18n="brazil">Brazil</strong>
+              </div>
+              <div class="score">
+                <span>1</span><i>:</i><span>1</span>
+              </div>
+              <div class="team team-right">
+                <span class="flag" aria-hidden="true">🇲🇦</span>
+                <strong data-i18n="morocco">Morocco</strong>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <div class="case-number">CASE #00631</div>
+              <h1 data-i18n="question">WAS THAT REALLY A PENALTY?</h1>
+              <p data-i18n="questionDetail">
+                The referee pointed to the spot after a late challenge. VAR upheld the call.
+              </p>
+            </div>
+
+            <div class="vote-grid" id="voteGrid">
+              <button class="vote-option saint" type="button" data-vote="saint">
+                <span class="vote-kicker" data-i18n="saintSide">Saint side</span>
+                <strong data-i18n="absolutely">Absolutely</strong>
+                <small data-i18n="clearPenalty">Clear penalty. No debate.</small>
+                <span class="vote-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="vote-option villain" type="button" data-vote="villain">
+                <span class="vote-kicker" data-i18n="villainSide">Villain side</span>
+                <strong data-i18n="never">Never</strong>
+                <small data-i18n="robbery">A robbery in plain sight.</small>
+                <span class="vote-arrow" aria-hidden="true">↖</span>
+              </button>
+            </div>
+
+            <div class="result-panel" id="resultPanel" aria-live="polite">
+              <div class="verdict-stamp" id="verdictStamp">VERDICT CAST</div>
+              <div class="result-heading">
+                <div>
+                  <span data-i18n="worldSplit">The world is split</span>
+                  <strong><span id="totalVotes">4,892,771</span> <small data-i18n="verdicts">verdicts</small></strong>
+                </div>
+                <button class="share-button" id="shareButton" type="button">
+                  <span data-i18n="shareVerdict">Share verdict</span>
+                  <b aria-hidden="true">↗</b>
+                </button>
+              </div>
+              <div class="split-numbers">
+                <strong class="gold"><span id="saintPercent">51</span>%</strong>
+                <span data-i18n="versus">versus</span>
+                <strong class="red"><span id="villainPercent">49</span>%</strong>
+              </div>
+              <div class="split-bar" aria-hidden="true">
+                <span class="split-saint" id="saintBar"></span>
+                <i></i>
+                <span class="split-villain" id="villainBar"></span>
+              </div>
+              <p class="minority-copy" id="minorityCopy"></p>
+            </div>
+          </div>
+
+          <aside class="pulse-panel">
+            <div class="pulse-heading">
+              <span data-i18n="globalPulse">Global pulse</span>
+              <strong>41 <small data-i18n="countriesLive">countries live</small></strong>
+            </div>
+
+            <div class="globe-visual" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="globe-core">
+                <span class="pulse-dot p1"></span>
+                <span class="pulse-dot p2"></span>
+                <span class="pulse-dot p3"></span>
+                <span class="pulse-dot p4"></span>
+                <b>51<span>%</span></b>
+                <small data-i18n="sayPenalty">say penalty</small>
+              </div>
+            </div>
+
+            <div class="nation-clash">
+              <div class="section-label">
+                <span data-i18n="nationClash">Nation clash</span>
+                <i>LIVE</i>
+              </div>
+              <div class="clash-row">
+                <span>🇧🇷 <b data-i18n="brazil">Brazil</b></span>
+                <strong class="gold">82% YES</strong>
+              </div>
+              <div class="clash-meter"><i style="width: 82%"></i></div>
+              <div class="clash-row">
+                <span>🇯🇵 <b data-i18n="japan">Japan</b></span>
+                <strong class="red">19% YES</strong>
+              </div>
+              <div class="clash-meter red-meter"><i style="width: 19%"></i></div>
+              <p data-i18n="nationCopy">These two nations could not disagree more.</p>
+            </div>
+
+            <button class="next-case" type="button" id="nextCase">
+              <span>
+                <small data-i18n="upNext">Up next</small>
+                <strong data-i18n="nextQuestion">Who is carrying the blame?</strong>
+              </span>
+              <b aria-hidden="true">→</b>
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="stories section-shell" id="stories">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow" data-i18n="breakingCourt">Breaking court</span>
+            <h2 data-i18n="worldOnTrial">THE WORLD IS ON TRIAL.</h2>
+          </div>
+          <p data-i18n="storiesIntro">
+            AI-detected moments rising across live matches, official sources and global conversation.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card lead-story">
+            <div class="story-status"><i></i> VIRAL · 12K/MIN</div>
+            <div class="story-copy">
+              <div class="story-tags"><span>VAR</span><span>VERDICT FLIPPED</span></div>
+              <h3 data-i18n="storyOneTitle">THE CALL THAT SPLIT FIVE CONTINENTS</h3>
+              <p data-i18n="storyOneCopy">
+                The majority changed sides after the replay. The argument is accelerating.
+              </p>
+            </div>
+            <div class="story-stat"><b>49</b><span data-i18n="nationsDivided">nations divided</span></div>
+            <button type="button" class="story-link"><span data-i18n="enterCase">Enter case</span> ↗</button>
+          </article>
+
+          <article class="story-card villain-story">
+            <div class="story-status">NEW VILLAIN</div>
+            <div class="rank-number">01</div>
+            <div class="story-copy">
+              <div class="story-tags"><span>RED CARD</span><span>88'</span></div>
+              <h3 data-i18n="storyTwoTitle">ONE TACKLE. A NATION FURIOUS.</h3>
+              <p data-i18n="storyTwoCopy">67% say he destroyed his team's last chance.</p>
+            </div>
+            <button type="button" class="story-link"><span data-i18n="judgeNow">Judge now</span> ↗</button>
+          </article>
+
+          <article class="story-card saint-story">
+            <div class="story-status">NEW SAINT</div>
+            <div class="halo-mark" aria-hidden="true"></div>
+            <div class="story-copy">
+              <div class="story-tags"><span>STOPPAGE TIME</span><span>GOAL</span></div>
+              <h3 data-i18n="storyThreeTitle">FROM THE BENCH TO IMMORTALITY</h3>
+              <p data-i18n="storyThreeCopy">A 94th-minute goal made him today's global Saint.</p>
+            </div>
+            <button type="button" class="story-link"><span data-i18n="seeVerdict">See verdict</span> ↗</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="rankings section-shell" id="rankings">
+        <div class="ranking-title">
+          <div>
+            <span class="eyebrow" data-i18n="liveRankings">Live rankings</span>
+            <h2>HALO <i>VS</i> HORNS</h2>
+          </div>
+          <div class="ranking-tabs" role="tablist">
+            <button class="active" type="button" role="tab" data-i18n="today">Today</button>
+            <button type="button" role="tab" data-i18n="tournament">Tournament</button>
+          </div>
+        </div>
+
+        <div class="ranking-columns">
+          <div class="ranking-list saint-list">
+            <div class="ranking-list-head">
+              <span>SAINTS</span><b>😇</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">01</span><span class="player-badge">JM</span>
+              <div><strong>J. Mendes</strong><small>🇵🇹 Portugal · Forward</small></div>
+              <b>91.4</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">02</span><span class="player-badge">KT</span>
+              <div><strong>K. Tanaka</strong><small>🇯🇵 Japan · Goalkeeper</small></div>
+              <b>88.7</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">03</span><span class="player-badge">LA</span>
+              <div><strong>L. Alvarez</strong><small>🇦🇷 Argentina · Midfielder</small></div>
+              <b>84.1</b>
+            </div>
+          </div>
+
+          <div class="ranking-list villain-list">
+            <div class="ranking-list-head">
+              <span>VILLAINS</span><b>😈</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">01</span><span class="player-badge">DR</span>
+              <div><strong>D. Rojas</strong><small>🇨🇴 Colombia · Defender</small></div>
+              <b>93.2</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">02</span><span class="player-badge">MS</span>
+              <div><strong>M. Silva</strong><small>🇧🇷 Brazil · Forward</small></div>
+              <b>87.8</b>
+            </div>
+            <div class="ranking-row">
+              <span class="place">03</span><span class="player-badge">AK</span>
+              <div><strong>A. Karim</strong><small>🇲🇦 Morocco · Midfielder</small></div>
+              <b>82.5</b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto section-shell">
+        <p data-i18n="manifestoTop">Every match creates</p>
+        <h2><span>A SAINT.</span><span>A VILLAIN.</span></h2>
+        <p data-i18n="manifestoBottom">The world decides which is which.</p>
+        <a href="#court" data-i18n="castFirst">Cast your first verdict</a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand">
+        <span class="brand-mark"><span>V</span><span>S</span></span>
+        <span class="brand-name">VILE<span>SAINT</span></span>
+      </div>
+      <p>Independent fan platform. Not affiliated with or endorsed by FIFA.</p>
+      <span>© 2026 VileSaint</span>
+    </footer>
+
+    <div class="mobile-nav" aria-label="Mobile navigation">
+      <a class="active" href="#court"><span>⚖</span><small data-i18n="navCourt">Court</small></a>
+      <a href="#stories"><span>ϟ</span><small data-i18n="navStories">Breaking</small></a>
+      <a href="#rankings"><span>♛</span><small data-i18n="navRankings">Rankings</small></a>
+      <button type="button" id="mobileShare"><span>↗</span><small data-i18n="share">Share</small></button>
+    </div>
+
+    <dialog class="language-dialog" id="languageDialog">
+      <form method="dialog">
+        <div class="dialog-head">
+          <div>
+            <span class="eyebrow">GLOBAL COURT</span>
+            <h2 data-i18n="chooseLanguage">Choose your language</h2>
+          </div>
+          <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+        </div>
+        <input
+          id="languageSearch"
+          type="search"
+          placeholder="Search languages"
+          autocomplete="off"
+          data-i18n-placeholder="searchLanguages"
+        />
+        <div class="language-grid" id="languageGrid"></div>
+      </form>
+    </dialog>
+
+    <dialog class="share-dialog" id="shareDialog">
+      <div class="share-layout">
+        <div class="share-poster" id="sharePoster">
+          <div class="poster-top">
+            <span>VILE<span>SAINT</span></span>
+            <b>LIVE VERDICT</b>
+          </div>
+          <div class="poster-match">🇧🇷 BRA 1 : 1 MAR 🇲🇦 · 63'</div>
+          <h2 data-i18n="question">WAS THAT REALLY A PENALTY?</h2>
+          <div class="poster-choice" id="posterChoice">I SAID: ABSOLUTELY.</div>
+          <div class="poster-result"><strong>51%</strong><span data-i18n="worldAgrees">of the world agrees</span></div>
+          <div class="poster-bottom">
+            <img
+              class="qr-code"
+              id="qrCode"
+              src="./assets/vilesaint-qr.png"
+              alt="Scan to open VileSaint and cast your verdict"
+              width="630"
+              height="630"
+            />
+            <div>
+              <b data-i18n="scanVote">SCAN TO VOTE</b>
+              <span>vilesaint.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="share-controls">
+          <button class="dialog-close share-close" id="shareClose" type="button" aria-label="Close">×</button>
+          <span class="eyebrow" data-i18n="yourVerdict">Your verdict</span>
+          <h2 data-i18n="makeNoise">MAKE SOME NOISE.</h2>
+          <p data-i18n="shareCopy">
+            Send this verdict to someone who thinks you're wrong.
+          </p>
+          <button class="primary-share" id="nativeShare" type="button">
+            <span data-i18n="shareNow">Share now</span><b>↗</b>
+          </button>
+          <button class="secondary-share" id="copyLink" type="button" data-i18n="copyLink">
+            Copy link
+          </button>
+          <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
