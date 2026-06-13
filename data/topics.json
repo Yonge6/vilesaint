@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T22:05:45.559Z",
+  "updated_at": "2026-06-13T23:19:44.401Z",
   "source_note": "Live match states use a scoreboard feed. VERIFIED is reserved for facts checked against official sources.",
   "topics": [
     {
@@ -16,14 +16,14 @@
       "initials": "BRA",
       "question": "比赛正在进行，你现在看好谁？",
       "question_en": "The match is live. Who do you back now?",
-      "fact": "巴西 0–0 摩洛哥，比赛进行中。数据将持续刷新。",
-      "fact_en": "Brazil 0–0 Morocco. The match is live and updating.",
+      "fact": "巴西 1–1 摩洛哥，比赛进行中。数据将持续刷新。",
+      "fact_en": "Brazil 1–1 Morocco. The match is live and updating.",
       "left": "巴西",
       "left_en": "Brazil",
       "right": "摩洛哥",
       "right_en": "Morocco",
-      "match": "直播 · 0–0",
-      "match_en": "LIVE · 0–0",
+      "match": "直播 · 1–1",
+      "match_en": "LIVE · 1–1",
       "kickoff_at": "2026-06-13T22:00Z",
       "priority": 120
     },
