@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;800&family=Noto+Sans+JP:wght@400;600;800&family=Noto+Sans+KR:wght@400;600;800&family=Noto+Sans+SC:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260613-save-poster" />
+    <link rel="stylesheet" href="./styles.css?v=20260613-topic-hub" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -50,6 +50,31 @@
     </header>
 
     <main>
+      <section class="topic-hub" id="topics">
+        <div class="topic-hub-shell">
+          <div class="topic-hub-header">
+            <div>
+              <span class="eyebrow">THE VERDICT BOARD</span>
+              <h2>今天，你站哪边？</h2>
+            </div>
+            <div class="topic-refresh">
+              <span><i></i> 自动更新</span>
+              <strong id="topicUpdatedAt">正在读取最新数据...</strong>
+            </div>
+          </div>
+
+          <div class="topic-filters" id="topicFilters" aria-label="主题筛选">
+            <button class="active" type="button" data-topic-filter="all">全部</button>
+            <button type="button" data-topic-filter="prematch">赛前预测</button>
+            <button type="button" data-topic-filter="live">直播争议</button>
+            <button type="button" data-topic-filter="final">赛后审判</button>
+            <button type="button" data-topic-filter="tournament">冠军预测</button>
+          </div>
+
+          <div class="topic-grid" id="topicGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
       <section class="court" id="court">
         <div class="breaking-ticker" aria-label="Breaking update">
           <span class="ticker-label" data-i18n="breaking">Breaking</span>
@@ -67,28 +92,28 @@
         <div class="court-grid">
           <div class="hero-panel">
             <div class="match-meta">
-              <span class="live-pill">FINAL · VERIFIED</span>
-              <span data-i18n="groupStage">Group stage · Match 18</span>
+              <span class="live-pill" id="heroStatus">FINAL · VERIFIED</span>
+              <span id="heroStage" data-i18n="groupStage">Group stage · Match 18</span>
             </div>
 
             <div class="scoreboard" aria-label="Mexico 2, South Africa 0">
               <div class="team team-left">
-                <span class="flag" aria-hidden="true">🇲🇽</span>
-                <strong data-i18n="mexico">Mexico</strong>
+                <span class="flag" id="heroLeftMark" aria-hidden="true">MEX</span>
+                <strong id="heroTeamLeft" data-i18n="mexico">Mexico</strong>
               </div>
-              <div class="score">
-                <span>2</span><i>:</i><span>0</span>
+              <div class="score" id="heroScore">
+                <span id="heroScoreLeft">2</span><i id="heroScoreDivider">:</i><span id="heroScoreRight">0</span>
               </div>
               <div class="team team-right">
-                <span class="flag" aria-hidden="true">🇿🇦</span>
-                <strong data-i18n="southAfrica">South Africa</strong>
+                <span class="flag" id="heroRightMark" aria-hidden="true">RSA</span>
+                <strong id="heroTeamRight" data-i18n="southAfrica">South Africa</strong>
               </div>
             </div>
 
             <div class="question-block">
-              <div class="case-number">CASE #00631</div>
-              <h1 data-i18n="question">WAS THAT REALLY A PENALTY?</h1>
-              <p data-i18n="questionDetail">
+              <div class="case-number" id="heroCaseNumber">CASE #00631</div>
+              <h1 id="heroQuestion" data-i18n="question">WAS THAT REALLY A PENALTY?</h1>
+              <p id="heroFact" data-i18n="questionDetail">
                 The referee pointed to the spot after a late challenge. VAR upheld the call.
               </p>
             </div>
@@ -126,7 +151,7 @@
           <aside class="pulse-panel">
             <div class="pulse-heading">
               <span data-i18n="globalPulse">Global pulse</span>
-              <strong>2–0 <small data-i18n="officialResult">official result</small></strong>
+              <strong id="topicPulseValue">FINAL <small id="topicPulseLabel">topic status</small></strong>
             </div>
 
             <div class="globe-visual" aria-hidden="true">
@@ -137,8 +162,8 @@
                 <span class="pulse-dot p2"></span>
                 <span class="pulse-dot p3"></span>
                 <span class="pulse-dot p4"></span>
-                <b>FT</b>
-                <small data-i18n="verifiedByFifa">verified by FIFA</small>
+                <b id="topicPulseCode">FT</b>
+                <small id="topicPulseSource">verified data</small>
               </div>
             </div>
 
@@ -148,16 +173,16 @@
                 <i>LIVE</i>
               </div>
               <div class="clash-row">
-                <span>🇲🇽 <b>J. Quiñones</b></span>
-                <strong class="gold">GOAL</strong>
+                <span><b id="topicPulseLeft">SIDE A</b></span>
+                <strong class="gold">BACK</strong>
               </div>
               <div class="clash-meter"><i style="width: 100%"></i></div>
               <div class="clash-row">
-                <span>🇲🇽 <b>R. Jiménez</b></span>
-                <strong class="gold">GOAL</strong>
+                <span><b id="topicPulseRight">SIDE B</b></span>
+                <strong class="gold">BACK</strong>
               </div>
               <div class="clash-meter"><i style="width: 100%"></i></div>
-              <p data-i18n="nationCopy">These two nations could not disagree more.</p>
+              <p id="topicPulseFact">Choose a side and enter the debate.</p>
             </div>
 
             <button class="next-case" type="button" id="nextCase">
@@ -190,10 +215,10 @@
               <i></i>
             </div>
             <div class="person-topic-copy">
-              <span class="person-topic-label" data-i18n="personOnTrial">本期人物</span>
-              <h3 id="personTopicTitle" data-i18n="commentSubject">劳尔·希门尼斯</h3>
-              <strong data-i18n="commentTopic">关键先生，还是吃了东道主红利？</strong>
-              <p data-i18n="commentSubjectFact">他在墨西哥2–0战胜南非的比赛中取得进球。</p>
+              <span class="person-topic-label" id="activeTopicType">本期人物</span>
+              <h3 id="personTopicTitle">劳尔·希门尼斯</h3>
+              <strong id="activeTopicQuestion">关键先生，还是吃了东道主红利？</strong>
+              <p id="activeTopicFact">他在墨西哥2–0战胜南非的比赛中取得进球。</p>
             </div>
             <div class="person-topic-stamp" data-i18n="debateOpen">争议开放</div>
           </article>
@@ -388,10 +413,10 @@
             <span>VILE<span>SAINT</span></span>
             <b>LIVE VERDICT</b>
           </div>
-          <div class="poster-match">🇲🇽 MEX 2 : 0 RSA 🇿🇦 · FINAL</div>
+          <div class="poster-match" id="posterMatch">VILESAINT · LIVE VERDICT</div>
           <h2 data-i18n="question">WAS THAT REALLY A PENALTY?</h2>
           <div class="poster-choice" id="posterChoice">I SAID: ABSOLUTELY.</div>
-          <div class="poster-result"><strong>2–0</strong><span data-i18n="officialResult">official result</span></div>
+          <div class="poster-result"><strong id="posterResultValue">PK</strong><span id="posterResultLabel">YOUR SIDE</span></div>
           <div class="poster-bottom">
             <div class="qr-frame">
               <img
@@ -432,6 +457,6 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
-    <script src="./app.js?v=20260613-save-poster"></script>
+    <script src="./app.js?v=20260613-topic-hub"></script>
   </body>
 </html>

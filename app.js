@@ -267,10 +267,10 @@ const copy = {
 const fallbackCopy = copy.en;
 const SUPABASE_URL = "https://vzbjghfepucqffgzuzdj.supabase.co";
 const SUPABASE_KEY = "sb_publishable_dLbm8KnThyH-sch7aGRS0A_q_CEuO6a";
-const COMMENT_CASE = "raul-jimenez-mexico-south-africa-2026";
+let COMMENT_CASE = "raul-jimenez-mexico-south-africa-2026";
 const state = {
   language: localStorage.getItem("vs-language") || detectLanguage(),
-  vote: localStorage.getItem("vs-vote") || null,
+  vote: null,
 };
 
 const languageDialog = document.querySelector("#languageDialog");
@@ -291,6 +291,12 @@ const replyTarget = document.querySelector("#replyTarget");
 const replyTargetText = document.querySelector("#replyTargetText");
 const cancelReply = document.querySelector("#cancelReply");
 const savePosterButton = document.querySelector("#savePoster");
+const topicGrid = document.querySelector("#topicGrid");
+const topicUpdatedAt = document.querySelector("#topicUpdatedAt");
+const topicFilters = document.querySelector("#topicFilters");
+let topics = [];
+let activeTopic;
+let activeTopicFilter = "all";
 let commentsClient;
 let commentUser;
 let commentProfile;
@@ -312,6 +318,14 @@ function currentCopy() {
   return copy[state.language] || fallbackCopy;
 }
 
+function isChinese() {
+  return state.language.startsWith("zh");
+}
+
+function topicText(topic, field) {
+  return isChinese() ? topic[field] : topic[`${field}_en`] || topic[field];
+}
+
 function translate() {
   const selected = languages.find((item) => item.code === state.language) || languages[0];
   document.documentElement.lang = state.language;
@@ -328,8 +342,187 @@ function translate() {
   });
   renderLanguages(languageSearch.value);
   updateVoteCopy();
+  renderTopics();
+  renderActiveTopic();
   renderComments();
   updateReplyTarget();
+}
+
+async function loadTopicData() {
+  try {
+    const response = await fetch(`./data/topics.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Topic feed returned ${response.status}`);
+    const payload = await response.json();
+    topics = payload.topics.sort((a, b) => b.priority - a.priority);
+    const updated = new Date(payload.updated_at);
+    topicUpdatedAt.textContent = `${isChinese() ? "最新数据" : "LATEST DATA"} · ${updated.toLocaleString(state.language, {
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+    const requested = new URL(window.location.href).searchParams.get("topic");
+    const selected = topics.find((topic) => topic.slug === requested)
+      || topics.find((topic) => topic.slug === COMMENT_CASE)
+      || topics[0];
+    if (!activeTopic || activeTopic.slug !== selected.slug) selectTopic(selected, false);
+    else {
+      activeTopic = selected;
+      renderActiveTopic();
+    }
+    renderTopics();
+  } catch (error) {
+    console.error("VileSaint topics:", error);
+    topicUpdatedAt.textContent = "数据刷新暂时不可用";
+  }
+}
+
+function getTopicVote(topic) {
+  return localStorage.getItem(`vs-topic-vote:${topic.slug}`);
+}
+
+function statusLabel(topic) {
+  if (topic.status === "FINAL") return isChinese() ? "已完赛" : "FINAL";
+  if (topic.status === "LIVE") return isChinese() ? "直播中" : "LIVE";
+  if (topic.status === "UPCOMING") return isChinese() ? "赛前" : "UPCOMING";
+  return isChinese() ? "预测" : "PREDICTION";
+}
+
+function createTopicSide(topic, side) {
+  const button = document.createElement("button");
+  const choice = side === "left" ? topicText(topic, "left") : topicText(topic, "right");
+  button.type = "button";
+  button.className = `topic-side ${side}${getTopicVote(topic) === side ? " selected" : ""}`;
+  const kicker = topic.theme_mode === "fade"
+    ? (isChinese() ? "更看衰" : "FADE")
+    : topic.theme_mode === "debate"
+      ? (side === "left" ? (isChinese() ? "认同" : "AGREE") : (isChinese() ? "质疑" : "DOUBT"))
+      : (isChinese() ? "看好" : "BACK");
+  button.innerHTML = `<span>${kicker}</span><strong>${choice}</strong>`;
+  button.addEventListener("click", () => {
+    localStorage.setItem(`vs-topic-vote:${topic.slug}`, side);
+    if (activeTopic?.slug === topic.slug) {
+      state.vote = side === "left" ? "saint" : "villain";
+      castVote(state.vote);
+    }
+    renderTopics();
+  });
+  return button;
+}
+
+function renderTopics() {
+  if (!topicGrid || !topics.length) return;
+  topicGrid.replaceChildren();
+  const visibleTopics = topics
+    .filter((topic) => activeTopicFilter === "all" || topic.category === activeTopicFilter)
+  if (!visibleTopics.length) {
+    const empty = document.createElement("div");
+    empty.className = "topic-grid-empty";
+    empty.textContent = isChinese() ? "这个分类暂时没有主题，数据更新后会自动出现。" : "No topics in this category yet.";
+    topicGrid.append(empty);
+    return;
+  }
+  visibleTopics.forEach((topic) => {
+      const card = document.createElement("article");
+      card.className = `topic-card ${topic.category}${activeTopic?.slug === topic.slug ? " active" : ""}`;
+      const head = document.createElement("div");
+      head.className = "topic-card-head";
+      const status = document.createElement("span");
+      status.className = `topic-status ${topic.status.toLowerCase()}`;
+      status.textContent = statusLabel(topic);
+      const match = document.createElement("small");
+      match.textContent = topicText(topic, "match");
+      head.append(status, match);
+
+      const subject = document.createElement("div");
+      subject.className = "topic-subject";
+      subject.innerHTML = `<b>${topic.initials}</b><span>${topicText(topic, "subject")}</span>`;
+      const question = document.createElement("h3");
+      question.textContent = topicText(topic, "question");
+      const fact = document.createElement("p");
+      fact.textContent = topicText(topic, "fact");
+      const sides = document.createElement("div");
+      sides.className = "topic-sides";
+      sides.append(createTopicSide(topic, "left"), createTopicSide(topic, "right"));
+      const enter = document.createElement("button");
+      enter.type = "button";
+      enter.className = "topic-enter";
+      enter.innerHTML = `<span>${isChinese() ? "进入主题评论区" : "ENTER TOPIC"}</span><b>↗</b>`;
+      enter.addEventListener("click", () => selectTopic(topic, true));
+      card.append(head, subject, question, fact, sides, enter);
+      topicGrid.append(card);
+    });
+}
+
+function renderActiveTopic() {
+  if (!activeTopic) return;
+  document.querySelector("#heroStatus").textContent =
+    `${statusLabel(activeTopic)}${activeTopic.verified ? " · VERIFIED" : ""}`;
+  document.querySelector("#heroStage").textContent = topicText(activeTopic, "match");
+  document.querySelector("#heroQuestion").textContent = topicText(activeTopic, "question");
+  document.querySelector("#heroFact").textContent = topicText(activeTopic, "fact");
+  document.querySelector("#heroTeamLeft").textContent = topicText(activeTopic, "left");
+  document.querySelector("#heroTeamRight").textContent = topicText(activeTopic, "right");
+  document.querySelector("#heroLeftMark").textContent = activeTopic.initials.slice(0, 3);
+  document.querySelector("#heroRightMark").textContent = "VS";
+  document.querySelector("#heroScoreLeft").textContent = "P";
+  document.querySelector("#heroScoreDivider").textContent = "K";
+  document.querySelector("#heroScoreRight").textContent = "";
+  document.querySelector("#heroCaseNumber").textContent =
+    `TOPIC #${activeTopic.slug.split("").reduce((total, char) => total + char.charCodeAt(0), 0).toString().slice(-5).padStart(5, "0")}`;
+  document.querySelector('[data-i18n="absolutely"]').textContent = topicText(activeTopic, "left");
+  document.querySelector('[data-i18n="never"]').textContent = topicText(activeTopic, "right");
+  document.querySelector('[data-i18n="clearPenalty"]').textContent = isChinese() ? "我看好这一边。" : "This is my pick.";
+  document.querySelector('[data-i18n="robbery"]').textContent = isChinese() ? "我站另一边。" : "I back the other side.";
+  document.querySelector("#activeTopicType").textContent =
+    activeTopic.category === "tournament" ? (isChinese() ? "赛事主题" : "TOURNAMENT TOPIC") : (isChinese() ? "本期主题" : "TOPIC ON TRIAL");
+  document.querySelector("#personTopicTitle").textContent = topicText(activeTopic, "subject");
+  document.querySelector("#activeTopicQuestion").textContent = topicText(activeTopic, "question");
+  document.querySelector("#activeTopicFact").textContent = topicText(activeTopic, "fact");
+  document.querySelector(".person-topic-avatar span").textContent = activeTopic.initials.slice(0, 3);
+  document.querySelector("#topicPulseValue").childNodes[0].textContent = `${statusLabel(activeTopic)} `;
+  document.querySelector("#topicPulseLabel").textContent = activeTopic.verified
+    ? (isChinese() ? "已核验" : "VERIFIED")
+    : (isChinese() ? "观点主题" : "OPINION TOPIC");
+  document.querySelector("#topicPulseCode").textContent =
+    activeTopic.status === "LIVE" ? "LIVE" : activeTopic.status === "FINAL" ? "FT" : "PK";
+  document.querySelector("#topicPulseSource").textContent = activeTopic.verified
+    ? (isChinese() ? "官方事实已核验" : "verified match fact")
+    : (isChinese() ? "不代表官方概率" : "fan opinion prompt");
+  document.querySelector("#topicPulseLeft").textContent = topicText(activeTopic, "left");
+  document.querySelector("#topicPulseRight").textContent = topicText(activeTopic, "right");
+  document.querySelector("#topicPulseFact").textContent = topicText(activeTopic, "fact");
+  document.querySelector("#posterMatch").textContent = `${topicText(activeTopic, "match")} · ${statusLabel(activeTopic)}`;
+  document.querySelector("#posterResultValue").textContent = "PK";
+  document.querySelector("#posterResultLabel").textContent = isChinese() ? "你的立场" : "YOUR SIDE";
+  commentInput.placeholder = isChinese()
+    ? `你怎么看“${topicText(activeTopic, "question")}”？`
+    : `What is your verdict: ${topicText(activeTopic, "question")}`;
+  updateVoteCopy();
+}
+
+async function selectTopic(topic, shouldScroll) {
+  activeTopic = topic;
+  COMMENT_CASE = topic.slug;
+  state.vote = getTopicVote(topic) === "left" ? "saint" : getTopicVote(topic) === "right" ? "villain" : null;
+  const url = new URL(window.location.href);
+  url.searchParams.set("topic", topic.slug);
+  history.replaceState({}, "", url);
+  resultPanel.classList.toggle("visible", Boolean(state.vote));
+  document.querySelectorAll(".vote-option").forEach((button) => {
+    const selected = button.dataset.vote === state.vote;
+    button.setAttribute("aria-pressed", selected ? "true" : "false");
+    button.style.opacity = state.vote ? (selected ? "1" : "0.48") : "1";
+  });
+  renderActiveTopic();
+  renderTopics();
+  comments = [];
+  replyingTo = null;
+  renderComments();
+  if (commentsClient && commentUser) {
+    await subscribeToActiveTopic();
+  }
+  if (shouldScroll) document.querySelector("#fanZone").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderLanguages(filter = "") {
@@ -354,7 +547,9 @@ function renderLanguages(filter = "") {
 
 function castVote(choice) {
   state.vote = choice;
-  localStorage.setItem("vs-vote", choice);
+  if (activeTopic) {
+    localStorage.setItem(`vs-topic-vote:${activeTopic.slug}`, choice === "saint" ? "left" : "right");
+  }
 
   document.querySelectorAll(".vote-option").forEach((button) => {
     button.setAttribute("aria-pressed", button.dataset.vote === choice ? "true" : "false");
@@ -368,7 +563,9 @@ function castVote(choice) {
 }
 
 function updateVoteCopy() {
-  const choice = state.vote === "villain" ? currentCopy().never : currentCopy().absolutely;
+  const choice = activeTopic
+    ? topicText(activeTopic, state.vote === "villain" ? "right" : "left")
+    : state.vote === "villain" ? currentCopy().never : currentCopy().absolutely;
   const isCjk = /^(zh|ja|ko)/.test(state.language);
   document.querySelector("#posterChoice").textContent =
     `${currentCopy().verdictPrefix || fallbackCopy.verdictPrefix}${isCjk ? "：" : ": "}` +
@@ -390,7 +587,9 @@ function showToast(message) {
 async function shareCurrentVerdict() {
   const shareData = {
     title: "VileSaint — Cast Your Verdict",
-    text: `${currentCopy().question} ${state.vote === "villain" ? currentCopy().never : currentCopy().absolutely}`,
+    text: activeTopic
+      ? `${topicText(activeTopic, "question")} ${topicText(activeTopic, state.vote === "villain" ? "right" : "left")}`
+      : `${currentCopy().question} ${state.vote === "villain" ? currentCopy().never : currentCopy().absolutely}`,
     url: window.location.href,
   };
   if (navigator.share) {
@@ -487,16 +686,26 @@ function createSharePosterBlob() {
   context.textAlign = "left";
   context.fillStyle = "#aaa69b";
   context.font = `800 25px ${bodyFont}`;
-  context.fillText("🇲🇽 MEX 2 : 0 RSA 🇿🇦 · FINAL", 74, 235);
+  context.fillText(
+    activeTopic ? `${topicText(activeTopic, "match")} · ${statusLabel(activeTopic)}` : "VILESAINT · LIVE VERDICT",
+    74,
+    235
+  );
 
   context.fillStyle = "#f3efe5";
   context.font = `900 ${isCjk ? 78 : 94}px ${displayFont}`;
-  const questionLines = wrapCanvasText(context, currentCopy().question, 930).slice(0, 3);
+  const questionLines = wrapCanvasText(
+    context,
+    activeTopic ? topicText(activeTopic, "question") : currentCopy().question,
+    930
+  ).slice(0, 3);
   const questionLineHeight = isCjk ? 96 : 88;
   questionLines.forEach((line, index) => context.fillText(line, 74, 304 + index * questionLineHeight));
   const questionBottom = 304 + questionLines.length * questionLineHeight;
 
-  const choice = state.vote === "villain" ? currentCopy().never : currentCopy().absolutely;
+  const choice = activeTopic
+    ? topicText(activeTopic, state.vote === "villain" ? "right" : "left")
+    : state.vote === "villain" ? currentCopy().never : currentCopy().absolutely;
   const choiceText = `${currentCopy().verdictPrefix || fallbackCopy.verdictPrefix}${isCjk ? "：" : ": "}${choice}${isCjk ? "。" : "."}`;
   context.font = `900 ${isCjk ? 38 : 44}px ${displayFont}`;
   const choiceWidth = Math.min(context.measureText(choiceText).width + 48, 930);
@@ -507,10 +716,10 @@ function createSharePosterBlob() {
 
   context.fillStyle = "#ffc928";
   context.font = `900 170px ${displayFont}`;
-  context.fillText("2–0", 74, questionBottom + 150);
+  context.fillText("PK", 74, questionBottom + 150);
   context.fillStyle = "#aaa69b";
   context.font = `800 25px ${bodyFont}`;
-  context.fillText(currentCopy().officialResult.toUpperCase(), 360, questionBottom + 248);
+  context.fillText(isChinese() ? "你的立场" : "YOUR SIDE", 300, questionBottom + 248);
 
   context.strokeStyle = "rgba(243,239,229,0.18)";
   context.lineWidth = 2;
@@ -658,6 +867,7 @@ function renderCommentCard(comment, isReply = false) {
 
 async function shareComment(comment) {
   const url = new URL(window.location.href);
+  url.searchParams.set("topic", COMMENT_CASE);
   url.hash = `comment-${comment.id}`;
   showToast(currentCopy().sharingComment);
   try {
@@ -731,7 +941,7 @@ function createCommentShareBlob(comment) {
   context.textAlign = "left";
   context.fillStyle = "#aaa69b";
   context.font = `800 25px ${bodyFont}`;
-  context.fillText(`${currentCopy().commentSubject.toUpperCase()} · PERSON ON TRIAL`, 74, 205);
+  context.fillText(`${topicText(activeTopic, "subject").toUpperCase()} · TOPIC ON TRIAL`, 74, 205);
 
   context.fillStyle = "#ffc928";
   context.beginPath();
@@ -752,7 +962,7 @@ function createCommentShareBlob(comment) {
 
   context.fillStyle = "#ff304a";
   context.font = `900 32px ${bodyFont}`;
-  context.fillText(currentCopy().commentTopic, 74, 420);
+  context.fillText(topicText(activeTopic, "question"), 74, 420);
 
   context.fillStyle = "#f3efe5";
   let fontSize = isCjk ? 62 : 68;
@@ -983,6 +1193,13 @@ async function initComments() {
     })
     .eq("user_id", commentUser.id);
 
+  await subscribeToActiveTopic();
+}
+
+async function subscribeToActiveTopic() {
+  if (commentsChannel) await commentsClient.removeChannel(commentsChannel);
+  comments = [];
+  renderComments();
   await loadComments();
   commentsChannel = commentsClient
     .channel(`comments:${COMMENT_CASE}`)
@@ -1016,6 +1233,13 @@ document.querySelector("#shareClose").addEventListener("click", () => shareDialo
 document.querySelector("#nativeShare").addEventListener("click", shareCurrentVerdict);
 savePosterButton.addEventListener("click", saveSharePoster);
 document.querySelector("#copyLink").addEventListener("click", copyCurrentLink);
+topicFilters.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-topic-filter]");
+  if (!button) return;
+  activeTopicFilter = button.dataset.topicFilter;
+  topicFilters.querySelectorAll("button").forEach((item) => item.classList.toggle("active", item === button));
+  renderTopics();
+});
 document.querySelector("#nextCase").addEventListener("click", () => {
   showToast(currentCopy().nextLoaded);
   document.querySelector("#stories").scrollIntoView({ behavior: "smooth" });
@@ -1039,5 +1263,7 @@ window.addEventListener("beforeunload", () => {
 });
 
 translate();
-if (state.vote) castVote(state.vote);
-initComments().catch(handleCommentError);
+loadTopicData()
+  .then(() => initComments().catch(handleCommentError))
+  .catch(handleCommentError);
+setInterval(loadTopicData, 60_000);
