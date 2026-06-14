@@ -29,7 +29,7 @@
           "headlineFact": "美国队 4:1 击败巴拉圭队",
           "headlineView": "这场胜利赢下的不只是比分，更打出了东道主的气势",
           "headlineFull": "美国队 4:1 击败巴拉圭队；这场胜利赢下的不只是比分，更打出了东道主的气势",
-          "intro": "美国队以 4:1 开启世界杯征程，巴洛贡梅开二度，进攻效率和比赛强度都给人留下深刻印象。比分只是结果，更值得关注的是球队展现出的自信、侵略性和主场动能，一场揭幕战已经提前改变了外界对东道主竞争力的判断。",
+          "intro": "美国以 4:1 开启世界杯征程，巴洛贡梅开二度，进攻效率和比赛强度都给人留下深刻印象。比分只是结果，更值得关注的是球队展现出的自信、侵略性和主场动能，一场揭幕战已经提前改变了外界对东道主竞争力的判断。",
           "xiaziQuote": "开局的气势，会影响整届赛事的叙事。",
           "doudouQuote": "先看终场哨，再谈封神。",
           "footerTakeaway": "世界杯不只记录比分，也放大全球情绪。"
@@ -61,61 +61,10 @@
       ]
     },
     {
-      "id": "20000000-0000-4000-8000-000000000002",
-      "issueId": "10000000-0000-4000-8000-000000000001",
-      "slug": "trade-routes-rewired",
-      "rank": 2,
-      "category": "business",
-      "region": "United States",
-      "countryCodes": [
-        "US"
-      ],
-      "eventTime": null,
-      "isDeveloping": true,
-      "verificationStatus": "verified",
-      "scoreTotal": 96,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "商业",
-          "headlineFact": "SpaceX 走向公开资本市场",
-          "headlineView": "火箭负责制造想象，估值最终仍要接受市场检验",
-          "headlineFull": "SpaceX 走向公开资本市场；火箭负责制造想象，估值最终仍要接受市场检验",
-          "intro": "SpaceX 已向美国证券监管机构提交 IPO 注册文件，商业航天巨头开始接受公开市场对收入、成本、风险与治理的全面审视。太空故事足够宏大，但资本最终购买的不是浪漫，而是可持续现金流、增长空间和经得起质询的定价逻辑。",
-          "xiaziQuote": "伟大愿景也需要财务坐标。",
-          "doudouQuote": "火箭能上天，估值未必能。",
-          "footerTakeaway": "资本市场会把想象力翻译成数字。"
-        },
-        "en-US": {
-          "categoryLabel": "Business",
-          "headlineFact": "SpaceX moves into public capital markets",
-          "headlineView": "rockets create imagination, but valuation must face the market",
-          "headlineFull": "SpaceX moves into public capital markets; rockets create imagination, but valuation must face the market",
-          "intro": "SpaceX has filed an IPO registration statement with U.S. regulators, opening the company to public scrutiny of revenue, cost, risk and governance. The space story is enormous, but investors ultimately buy sustainable cash flow, credible growth and a valuation that survives examination.",
-          "xiaziQuote": "Great visions still need financial coordinates.",
-          "doudouQuote": "Rockets can fly; valuations may not.",
-          "footerTakeaway": "Public markets translate imagination into numbers."
-        }
-      },
-      "sources": [
-        {
-          "id": "30000000-0000-4000-8000-000000000002",
-          "topicId": "20000000-0000-4000-8000-000000000002",
-          "title": "Space Exploration Technologies S-1",
-          "publisher": "U.S. SEC",
-          "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/0001628280-26-036936-index.htm",
-          "publishedAt": "2026-05-20T00:00:00Z",
-          "sourceType": "official",
-          "sourceTier": 1,
-          "locale": "en-US",
-          "isPrimary": true
-        }
-      ]
-    },
-    {
       "id": "20000000-0000-4000-8000-000000000003",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "ai-governance-crossroads",
-      "rank": 3,
+      "rank": 2,
       "category": "technology",
       "region": "Global",
       "countryCodes": [
@@ -163,10 +112,112 @@
       ]
     },
     {
+      "id": "20000000-0000-4000-8000-000000000002",
+      "issueId": "10000000-0000-4000-8000-000000000001",
+      "slug": "trade-routes-rewired",
+      "rank": 3,
+      "category": "business",
+      "region": "United States",
+      "countryCodes": [
+        "US"
+      ],
+      "eventTime": null,
+      "isDeveloping": true,
+      "verificationStatus": "verified",
+      "scoreTotal": 96,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "商业",
+          "headlineFact": "SpaceX 走向公开资本市场",
+          "headlineView": "火箭负责制造想象，估值最终仍要接受市场检验",
+          "headlineFull": "SpaceX 走向公开资本市场；火箭负责制造想象，估值最终仍要接受市场检验",
+          "intro": "SpaceX 已向美国证券监管机构提交 IPO 注册文件，商业航天巨头开始接受公开市场对收入、成本、风险与治理的全面审视。太空故事足够宏大，但资本最终购买的不是浪漫，而是可持续现金流、增长空间和经得起质询的定价逻辑。",
+          "xiaziQuote": "伟大愿景也需要财务坐标。",
+          "doudouQuote": "火箭能上天，估值未必能。",
+          "footerTakeaway": "资本市场会把想象力翻译成数字。"
+        },
+        "en-US": {
+          "categoryLabel": "Business",
+          "headlineFact": "SpaceX moves into public capital markets",
+          "headlineView": "rockets create imagination, but valuation must face the market",
+          "headlineFull": "SpaceX moves into public capital markets; rockets create imagination, but valuation must face the market",
+          "intro": "SpaceX has filed an IPO registration statement with U.S. regulators, opening the company to public scrutiny of revenue, cost, risk and governance. The space story is enormous, but investors ultimately buy sustainable cash flow, credible growth and a valuation that survives examination.",
+          "xiaziQuote": "Great visions still need financial coordinates.",
+          "doudouQuote": "Rockets can fly; valuations may not.",
+          "footerTakeaway": "Public markets translate imagination into numbers."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000002",
+          "topicId": "20000000-0000-4000-8000-000000000002",
+          "title": "Space Exploration Technologies S-1",
+          "publisher": "U.S. SEC",
+          "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/0001628280-26-036936-index.htm",
+          "publishedAt": "2026-05-20T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000009",
+      "issueId": "10000000-0000-4000-8000-000000000001",
+      "slug": "climate-adaptation-city",
+      "rank": 4,
+      "category": "science",
+      "region": "International Space Station",
+      "countryCodes": [
+        "US"
+      ],
+      "eventTime": "2026-06-16T16:05:00Z",
+      "isDeveloping": true,
+      "verificationStatus": "verified",
+      "scoreTotal": 84,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "科学",
+          "headlineFact": "龙飞船计划离站返航并带回科研样本",
+          "headlineView": "真正落地的不只是飞船，更是下一步探索的答案",
+          "headlineFull": "龙飞船计划离站返航并带回科研样本；真正落地的不只是飞船，更是下一步探索的答案",
+          "intro": "NASA 计划于 6 月 16 日安排 SpaceX 第 34 次货运龙飞船离开国际空间站，返回地球并带回对时间敏感的科研样本与设备。返航不是任务尾声，样本进入实验室后产生的数据，才会转化为长期太空生活与地面医学的新知识。",
+          "xiaziQuote": "探索的价值，最终要回到可验证的答案。",
+          "doudouQuote": "飞得高很酷，带回结果才算交作业。",
+          "footerTakeaway": "太空实验的下一站，是地球实验室。"
+        },
+        "en-US": {
+          "categoryLabel": "Science",
+          "headlineFact": "Dragon is scheduled to return with research samples",
+          "headlineView": "what lands is not only a spacecraft, but answers for the next mission",
+          "headlineFull": "Dragon is scheduled to return with research samples; what lands is not only a spacecraft, but answers for the next mission",
+          "intro": "NASA plans for SpaceX's 34th cargo Dragon to leave the International Space Station on June 16 carrying time-sensitive research samples and hardware. Return is not the end of the mission: laboratory analysis on Earth turns orbital experiments into knowledge for long-duration spaceflight and medicine.",
+          "xiaziQuote": "Exploration gains value through verifiable answers.",
+          "doudouQuote": "Flying high is cool. Bringing results home completes the assignment.",
+          "footerTakeaway": "The next stop for orbital science is an Earth laboratory."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000009",
+          "topicId": "20000000-0000-4000-8000-000000000009",
+          "title": "NASA to cover CRS-34 departure",
+          "publisher": "NASA",
+          "url": "https://www.nasa.gov/news-release/nasa-to-cover-34th-spacex-resupply-mission-space-station-departure/",
+          "publishedAt": "2026-06-12T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
       "id": "20000000-0000-4000-8000-000000000004",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "global-health-readiness",
-      "rank": 4,
+      "rank": 5,
       "category": "technology",
       "region": "Global",
       "countryCodes": [
@@ -217,7 +268,7 @@
       "id": "20000000-0000-4000-8000-000000000005",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "culture-restoration-digital",
-      "rank": 5,
+      "rank": 6,
       "category": "technology",
       "region": "European Union",
       "countryCodes": [
@@ -268,7 +319,7 @@
       "id": "20000000-0000-4000-8000-000000000006",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "energy-transition-grid",
-      "rank": 6,
+      "rank": 7,
       "category": "international",
       "region": "France",
       "countryCodes": [
@@ -308,55 +359,6 @@
           "publisher": "France Diplomatie",
           "url": "https://www.diplomatie.gouv.fr/en/the-ministry-in-action/contributing-to-sustainable-balanced-globalization/summits-and-global-issues/france-s-action-in-the-g7",
           "publishedAt": null,
-          "sourceType": "official",
-          "sourceTier": 1,
-          "locale": "en-US",
-          "isPrimary": true
-        }
-      ]
-    },
-    {
-      "id": "20000000-0000-4000-8000-000000000007",
-      "issueId": "10000000-0000-4000-8000-000000000001",
-      "slug": "ocean-treaty-action",
-      "rank": 7,
-      "category": "climate",
-      "region": "Global Ocean",
-      "countryCodes": [],
-      "eventTime": null,
-      "isDeveloping": false,
-      "verificationStatus": "verified",
-      "scoreTotal": 88,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "环境",
-          "headlineFact": "联合国海洋评估再次发出警报",
-          "headlineView": "海洋不是遥远的风景，而是人类共同的生命线",
-          "headlineFull": "联合国海洋评估再次发出警报；海洋不是遥远的风景，而是人类共同的生命线",
-          "intro": "联合国第三次世界海洋评估指出，气候变化、过度捕捞、污染与生物多样性下降正让海洋承受持续加速的压力。海洋调节气候、提供食物并支撑亿万人生计，它的变化并不遥远，而会通过天气、经济和公共健康回到每个人身边。",
-          "xiaziQuote": "保护海洋，就是保护陆地上的生活。",
-          "doudouQuote": "看不见海底，不等于问题不存在。",
-          "footerTakeaway": "共同海洋需要共同承担责任。"
-        },
-        "en-US": {
-          "categoryLabel": "Environment",
-          "headlineFact": "The UN ocean assessment issues another warning",
-          "headlineView": "the ocean is not distant scenery, but humanity's shared lifeline",
-          "headlineFull": "The UN ocean assessment issues another warning; the ocean is not distant scenery, but humanity's shared lifeline",
-          "intro": "The UN's Third World Ocean Assessment says climate change, overfishing, pollution and biodiversity loss are placing accelerating pressure on the ocean. The ocean regulates climate, supplies food and supports billions of livelihoods. Its decline returns to everyone through weather, economics and health.",
-          "xiaziQuote": "Protecting the ocean protects life on land.",
-          "doudouQuote": "Invisible underwater does not mean nonexistent.",
-          "footerTakeaway": "A shared ocean demands shared responsibility."
-        }
-      },
-      "sources": [
-        {
-          "id": "30000000-0000-4000-8000-000000000007",
-          "topicId": "20000000-0000-4000-8000-000000000007",
-          "title": "Third World Ocean Assessment",
-          "publisher": "United Nations",
-          "url": "https://www.un.org/sustainabledevelopment/blog/2026/06/press-release-as-ocean-pressures-mount-united-nations-report-calls-for-urgent-global-collaboration-to-protect-marine-ecosystems/",
-          "publishedAt": "2026-06-08T00:00:00Z",
           "sourceType": "official",
           "sourceTier": 1,
           "locale": "en-US",
@@ -416,49 +418,47 @@
       ]
     },
     {
-      "id": "20000000-0000-4000-8000-000000000009",
+      "id": "20000000-0000-4000-8000-000000000007",
       "issueId": "10000000-0000-4000-8000-000000000001",
-      "slug": "climate-adaptation-city",
+      "slug": "ocean-treaty-action",
       "rank": 9,
-      "category": "science",
-      "region": "International Space Station",
-      "countryCodes": [
-        "US"
-      ],
-      "eventTime": "2026-06-16T16:05:00Z",
-      "isDeveloping": true,
+      "category": "climate",
+      "region": "Global Ocean",
+      "countryCodes": [],
+      "eventTime": null,
+      "isDeveloping": false,
       "verificationStatus": "verified",
-      "scoreTotal": 84,
+      "scoreTotal": 88,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "科学",
-          "headlineFact": "龙飞船计划离站返航并带回科研样本",
-          "headlineView": "真正落地的不只是飞船，更是下一步探索的答案",
-          "headlineFull": "龙飞船计划离站返航并带回科研样本；真正落地的不只是飞船，更是下一步探索的答案",
-          "intro": "NASA 计划于 6 月 16 日安排 SpaceX 第 34 次货运龙飞船离开国际空间站，返回地球并带回对时间敏感的科研样本与设备。返航不是任务尾声，样本进入实验室后产生的数据，才会转化为长期太空生活与地面医学的新知识。",
-          "xiaziQuote": "探索的价值，最终要回到可验证的答案。",
-          "doudouQuote": "飞得高很酷，带回结果才算交作业。",
-          "footerTakeaway": "太空实验的下一站，是地球实验室。"
+          "categoryLabel": "环境",
+          "headlineFact": "联合国海洋评估再次发出警报",
+          "headlineView": "海洋不是遥远的风景，而是人类共同的生命线",
+          "headlineFull": "联合国海洋评估再次发出警报；海洋不是遥远的风景，而是人类共同的生命线",
+          "intro": "联合国第三次世界海洋评估指出，气候变化、过度捕捞、污染与生物多样性下降正让海洋承受持续加速的压力。海洋调节气候、提供食物并支撑亿万人生计，它的变化并不遥远，而会通过天气、经济和公共健康回到每个人身边。",
+          "xiaziQuote": "保护海洋，就是保护陆地上的生活。",
+          "doudouQuote": "看不见海底，不等于问题不存在。",
+          "footerTakeaway": "共同海洋需要共同承担责任。"
         },
         "en-US": {
-          "categoryLabel": "Science",
-          "headlineFact": "Dragon is scheduled to return with research samples",
-          "headlineView": "what lands is not only a spacecraft, but answers for the next mission",
-          "headlineFull": "Dragon is scheduled to return with research samples; what lands is not only a spacecraft, but answers for the next mission",
-          "intro": "NASA plans for SpaceX's 34th cargo Dragon to leave the International Space Station on June 16 carrying time-sensitive research samples and hardware. Return is not the end of the mission: laboratory analysis on Earth turns orbital experiments into knowledge for long-duration spaceflight and medicine.",
-          "xiaziQuote": "Exploration gains value through verifiable answers.",
-          "doudouQuote": "Flying high is cool. Bringing results home completes the assignment.",
-          "footerTakeaway": "The next stop for orbital science is an Earth laboratory."
+          "categoryLabel": "Environment",
+          "headlineFact": "The UN ocean assessment issues another warning",
+          "headlineView": "the ocean is not distant scenery, but humanity's shared lifeline",
+          "headlineFull": "The UN ocean assessment issues another warning; the ocean is not distant scenery, but humanity's shared lifeline",
+          "intro": "The UN's Third World Ocean Assessment says climate change, overfishing, pollution and biodiversity loss are placing accelerating pressure on the ocean. The ocean regulates climate, supplies food and supports billions of livelihoods. Its decline returns to everyone through weather, economics and health.",
+          "xiaziQuote": "Protecting the ocean protects life on land.",
+          "doudouQuote": "Invisible underwater does not mean nonexistent.",
+          "footerTakeaway": "A shared ocean demands shared responsibility."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000009",
-          "topicId": "20000000-0000-4000-8000-000000000009",
-          "title": "NASA to cover CRS-34 departure",
-          "publisher": "NASA",
-          "url": "https://www.nasa.gov/news-release/nasa-to-cover-34th-spacex-resupply-mission-space-station-departure/",
-          "publishedAt": "2026-06-12T00:00:00Z",
+          "id": "30000000-0000-4000-8000-000000000007",
+          "topicId": "20000000-0000-4000-8000-000000000007",
+          "title": "Third World Ocean Assessment",
+          "publisher": "United Nations",
+          "url": "https://www.un.org/sustainabledevelopment/blog/2026/06/press-release-as-ocean-pressures-mount-united-nations-report-calls-for-urgent-global-collaboration-to-protect-marine-ecosystems/",
+          "publishedAt": "2026-06-08T00:00:00Z",
           "sourceType": "official",
           "sourceTier": 1,
           "locale": "en-US",
