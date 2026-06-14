@@ -26,9 +26,9 @@
       "localizations": {
         "zh-CN": {
           "categoryLabel": "世界杯",
-          "headlineFact": "美国队 4:1 击败巴拉圭队",
+          "headlineFact": "美国队 4:1 击败巴拉圭",
           "headlineView": "这场胜利赢下的不只是比分，更打出了东道主的气势",
-          "headlineFull": "美国队 4:1 击败巴拉圭队；这场胜利赢下的不只是比分，更打出了东道主的气势",
+          "headlineFull": "美国队 4:1 击败巴拉圭；这场胜利赢下的不只是比分，更打出了东道主的气势",
           "intro": "美国队以 4:1 开启世界杯征程，巴洛贡梅开二度，进攻效率和比赛强度都给人留下深刻印象。比分只是结果，更值得关注的是球队展现出的自信、侵略性和主场动能，一场揭幕战已经提前改变了外界对东道主竞争力的判断。",
           "xiaziQuote": "开局的气势，会影响整届赛事的叙事。",
           "doudouQuote": "先看终场哨，再谈封神。",
@@ -61,61 +61,10 @@
       ]
     },
     {
-      "id": "20000000-0000-4000-8000-000000000002",
-      "issueId": "10000000-0000-4000-8000-000000000001",
-      "slug": "trade-routes-rewired",
-      "rank": 2,
-      "category": "business",
-      "region": "United States",
-      "countryCodes": [
-        "US"
-      ],
-      "eventTime": null,
-      "isDeveloping": true,
-      "verificationStatus": "verified",
-      "scoreTotal": 96,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "商业",
-          "headlineFact": "SpaceX 走向公开资本市场",
-          "headlineView": "火箭负责制造想象，估值最终仍要接受市场检验",
-          "headlineFull": "SpaceX 走向公开资本市场；火箭负责制造想象，估值最终仍要接受市场检验",
-          "intro": "SpaceX 已向美国证券监管机构提交 IPO 注册文件，商业航天巨头开始接受公开市场对收入、成本、风险与治理的全面审视。太空故事足够宏大，但资本最终购买的不是浪漫，而是可持续现金流、增长空间和经得起质询的定价逻辑。",
-          "xiaziQuote": "伟大愿景也需要财务坐标。",
-          "doudouQuote": "火箭能上天，估值未必能。",
-          "footerTakeaway": "资本市场会把想象力翻译成数字。"
-        },
-        "en-US": {
-          "categoryLabel": "Business",
-          "headlineFact": "SpaceX moves into public capital markets",
-          "headlineView": "rockets create imagination, but valuation must face the market",
-          "headlineFull": "SpaceX moves into public capital markets; rockets create imagination, but valuation must face the market",
-          "intro": "SpaceX has filed an IPO registration statement with U.S. regulators, opening the company to public scrutiny of revenue, cost, risk and governance. The space story is enormous, but investors ultimately buy sustainable cash flow, credible growth and a valuation that survives examination.",
-          "xiaziQuote": "Great visions still need financial coordinates.",
-          "doudouQuote": "Rockets can fly; valuations may not.",
-          "footerTakeaway": "Public markets translate imagination into numbers."
-        }
-      },
-      "sources": [
-        {
-          "id": "30000000-0000-4000-8000-000000000002",
-          "topicId": "20000000-0000-4000-8000-000000000002",
-          "title": "Space Exploration Technologies S-1",
-          "publisher": "U.S. SEC",
-          "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/0001628280-26-036936-index.htm",
-          "publishedAt": "2026-05-20T00:00:00Z",
-          "sourceType": "official",
-          "sourceTier": 1,
-          "locale": "en-US",
-          "isPrimary": true
-        }
-      ]
-    },
-    {
       "id": "20000000-0000-4000-8000-000000000003",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "ai-governance-crossroads",
-      "rank": 3,
+      "rank": 2,
       "category": "technology",
       "region": "Global",
       "countryCodes": [
@@ -155,6 +104,57 @@
           "publisher": "Anthropic",
           "url": "https://www.anthropic.com/news/fable-mythos-access",
           "publishedAt": "2026-06-13T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000002",
+      "issueId": "10000000-0000-4000-8000-000000000001",
+      "slug": "trade-routes-rewired",
+      "rank": 3,
+      "category": "business",
+      "region": "United States",
+      "countryCodes": [
+        "US"
+      ],
+      "eventTime": null,
+      "isDeveloping": true,
+      "verificationStatus": "verified",
+      "scoreTotal": 96,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "商业",
+          "headlineFact": "SpaceX 走向公开资本市场",
+          "headlineView": "火箭负责制造想象，估值最终仍要接受市场检验",
+          "headlineFull": "SpaceX 走向公开资本市场；火箭负责制造想象，估值最终仍要接受市场检验",
+          "intro": "SpaceX 已向美国证券监管机构提交 IPO 注册文件，商业航天巨头开始接受公开市场对收入、成本、风险与治理的全面审视。太空故事足够宏大，但资本最终购买的不是浪漫，而是可持续现金流、增长空间和经得起质询的定价逻辑。",
+          "xiaziQuote": "伟大愿景也需要财务坐标。",
+          "doudouQuote": "火箭能上天，估值未必能。",
+          "footerTakeaway": "资本市场会把想象力翻译成数字。"
+        },
+        "en-US": {
+          "categoryLabel": "Business",
+          "headlineFact": "SpaceX moves into public capital markets",
+          "headlineView": "rockets create imagination, but valuation must face the market",
+          "headlineFull": "SpaceX moves into public capital markets; rockets create imagination, but valuation must face the market",
+          "intro": "SpaceX has filed an IPO registration statement with U.S. regulators, opening the company to public scrutiny of revenue, cost, risk and governance. The space story is enormous, but investors ultimately buy sustainable cash flow, credible growth and a valuation that survives examination.",
+          "xiaziQuote": "Great visions still need financial coordinates.",
+          "doudouQuote": "Rockets can fly; valuations may not.",
+          "footerTakeaway": "Public markets translate imagination into numbers."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000002",
+          "topicId": "20000000-0000-4000-8000-000000000002",
+          "title": "Space Exploration Technologies S-1",
+          "publisher": "U.S. SEC",
+          "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/0001628280-26-036936-index.htm",
+          "publishedAt": "2026-05-20T00:00:00Z",
           "sourceType": "official",
           "sourceTier": 1,
           "locale": "en-US",
