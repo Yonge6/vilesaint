@@ -61,61 +61,10 @@
       ]
     },
     {
-      "id": "20000000-0000-4000-8000-000000000003",
-      "issueId": "10000000-0000-4000-8000-000000000001",
-      "slug": "ai-governance-crossroads",
-      "rank": 2,
-      "category": "technology",
-      "region": "Global",
-      "countryCodes": [
-        "US"
-      ],
-      "eventTime": "2026-06-13T00:00:00Z",
-      "isDeveloping": true,
-      "verificationStatus": "verified",
-      "scoreTotal": 95,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "AI",
-          "headlineFact": "Claude Fable 5 与 Mythos 5 访问暂停",
-          "headlineView": "模型能力越强，规则与边界就越无法回避",
-          "headlineFull": "Claude Fable 5 与 Mythos 5 访问暂停；模型能力越强，规则与边界就越无法回避",
-          "intro": "Anthropic 表示，在美国政府出口管制指令下，公司必须暂停外国用户对 Fable 5 与 Mythos 5 的访问。事件提醒行业：前沿模型竞争已不只是性能竞赛，国家安全、人员身份、跨境服务和监管权力正在共同决定技术究竟能被谁使用。",
-          "xiaziQuote": "技术边界正在被制度重新划线。",
-          "doudouQuote": "最强模型，也绕不过一纸规则。",
-          "footerTakeaway": "能力越接近基础设施，治理越无法缺席。"
-        },
-        "en-US": {
-          "categoryLabel": "AI",
-          "headlineFact": "Access to Claude Fable 5 and Mythos 5 is suspended",
-          "headlineView": "stronger models make rules and boundaries impossible to avoid",
-          "headlineFull": "Access to Claude Fable 5 and Mythos 5 is suspended; stronger models make rules and boundaries impossible to avoid",
-          "intro": "Anthropic says a U.S. export-control directive forced it to suspend foreign-national access to Fable 5 and Mythos 5. The episode shows that frontier AI is no longer only a performance race: security policy, identity, cross-border service and regulatory power increasingly determine who can use advanced systems.",
-          "xiaziQuote": "Institutions are redrawing the technology boundary.",
-          "doudouQuote": "Even the strongest model cannot jailbreak a government order.",
-          "footerTakeaway": "As capability becomes infrastructure, governance cannot stay absent."
-        }
-      },
-      "sources": [
-        {
-          "id": "30000000-0000-4000-8000-000000000003",
-          "topicId": "20000000-0000-4000-8000-000000000003",
-          "title": "Statement on government directive",
-          "publisher": "Anthropic",
-          "url": "https://www.anthropic.com/news/fable-mythos-access",
-          "publishedAt": "2026-06-13T00:00:00Z",
-          "sourceType": "official",
-          "sourceTier": 1,
-          "locale": "en-US",
-          "isPrimary": true
-        }
-      ]
-    },
-    {
       "id": "20000000-0000-4000-8000-000000000002",
       "issueId": "10000000-0000-4000-8000-000000000001",
       "slug": "trade-routes-rewired",
-      "rank": 3,
+      "rank": 2,
       "category": "business",
       "region": "United States",
       "countryCodes": [
@@ -155,6 +104,57 @@
           "publisher": "U.S. SEC",
           "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/0001628280-26-036936-index.htm",
           "publishedAt": "2026-05-20T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000003",
+      "issueId": "10000000-0000-4000-8000-000000000001",
+      "slug": "ai-governance-crossroads",
+      "rank": 3,
+      "category": "technology",
+      "region": "Global",
+      "countryCodes": [
+        "US"
+      ],
+      "eventTime": "2026-06-13T00:00:00Z",
+      "isDeveloping": true,
+      "verificationStatus": "verified",
+      "scoreTotal": 95,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "AI",
+          "headlineFact": "Claude Fable 5 与 Mythos 5 访问暂停",
+          "headlineView": "模型能力越强，规则与边界就越无法回避",
+          "headlineFull": "Claude Fable 5 与 Mythos 5 访问暂停；模型能力越强，规则与边界就越无法回避",
+          "intro": "Anthropic 表示，在美国政府出口管制指令下，公司必须暂停外国用户对 Fable 5 与 Mythos 5 的访问。事件提醒行业：前沿模型竞争已不只是性能竞赛，国家安全、人员身份、跨境服务和监管权力正在共同决定技术究竟能被谁使用。",
+          "xiaziQuote": "技术边界正在被制度重新划线。",
+          "doudouQuote": "最强模型，也绕不过一纸规则。",
+          "footerTakeaway": "能力越接近基础设施，治理越无法缺席。"
+        },
+        "en-US": {
+          "categoryLabel": "AI",
+          "headlineFact": "Access to Claude Fable 5 and Mythos 5 is suspended",
+          "headlineView": "stronger models make rules and boundaries impossible to avoid",
+          "headlineFull": "Access to Claude Fable 5 and Mythos 5 is suspended; stronger models make rules and boundaries impossible to avoid",
+          "intro": "Anthropic says a U.S. export-control directive forced it to suspend foreign-national access to Fable 5 and Mythos 5. The episode shows that frontier AI is no longer only a performance race: security policy, identity, cross-border service and regulatory power increasingly determine who can use advanced systems.",
+          "xiaziQuote": "Institutions are redrawing the technology boundary.",
+          "doudouQuote": "Even the strongest model cannot jailbreak a government order.",
+          "footerTakeaway": "As capability becomes infrastructure, governance cannot stay absent."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000003",
+          "topicId": "20000000-0000-4000-8000-000000000003",
+          "title": "Statement on government directive",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/news/fable-mythos-access",
+          "publishedAt": "2026-06-13T00:00:00Z",
           "sourceType": "official",
           "sourceTier": 1,
           "locale": "en-US",
