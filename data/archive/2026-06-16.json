@@ -1,6 +1,7 @@
 {
   "id": "10000000-0000-4000-8000-000000000003",
   "slug": "2026-06-16",
+  "assetVersion": "2026-06-16-user-1781554600927",
   "issueDate": "2026-06-16",
   "slotHour": 0,
   "beijingTimestamp": "2026-06-16T00:05:00+08:00",
@@ -18,6 +19,8 @@
       "countryCodes": [
         "SE",
         "TN",
+        "JP",
+        "NL",
         "CI",
         "EC"
       ],
@@ -33,88 +36,101 @@
         "zh-CN": {
           "categoryLabel": "世界杯",
           "headlineFact": "瑞典 5:1 大胜突尼斯",
-          "headlineView": "世界杯首战最好的自我介绍，是把机会变成压迫感",
-          "headlineFull": "瑞典 5:1 大胜突尼斯；世界杯首战最好的自我介绍，是把机会变成压迫感。",
-          "intro": "瑞典在小组赛首战以 5:1 击败突尼斯，亚辛·阿亚里梅开二度，伊萨克、哲凯赖什参与撕开防线，球队把对手失误连续变成进球。当天另一场焦点战中，科特迪瓦凭阿马德·迪亚洛第 90 分钟绝杀，1:0 击败厄瓜多尔。首轮刚开始，效率已经在替强弱重新排座次。",
-          "xiaziQuote": "大赛首战不必完美，但必须让对手记住你的强项。",
-          "doudouQuote": "五个球打完招呼，名片都快拍到对手脸上了。",
-          "footerTakeaway": "首轮比分不仅给积分，也给整个小组制造心理压力。"
+          "headlineView": "真正的强势开局，不只拿三分，也重新划定小组格局",
+          "intro": "瑞典凭借阿亚里梅开二度，以及伊萨克、哲凯赖什等人的进球，以 5:1 击败突尼斯，暂时领跑 F 组。当天其他比赛中，日本两度落后仍以 2:2 逼平荷兰；科特迪瓦则在第 90 分钟绝杀厄瓜多尔，以 1:0 取得开门红。",
+          "xiaziQuote": "强队第一战，赢球是结果，立威才是战略。",
+          "doudouQuote": "5 个球不是热身，是先把气势踢满了。",
+          "footerTakeaway": "强势首战不仅拿到积分，也会改变整个小组的心理格局。",
+          "headlineFull": "瑞典 5:1 大胜突尼斯；真正的强势开局，不只拿三分，也重新划定小组格局。"
         },
         "en-US": {
           "categoryLabel": "World Cup",
           "headlineFact": "Sweden beat Tunisia 5-1",
-          "headlineView": "the best opening statement is turning chances into sustained pressure",
-          "headlineFull": "Sweden beat Tunisia 5-1; the best opening statement is turning chances into sustained pressure.",
-          "intro": "Sweden opened with a 5-1 win over Tunisia as Yasin Ayari scored twice and the attack repeatedly punished defensive errors. In the day's other major result, Amad Diallo struck in the 90th minute to give Côte d'Ivoire a 1-0 victory over Ecuador. The first round is only beginning, but efficiency is already reshaping expectations.",
-          "xiaziQuote": "An opener need not be perfect, but it must make a team's strengths unforgettable.",
-          "doudouQuote": "Five goals is less an introduction than a business card to the face.",
-          "footerTakeaway": "Opening scores create points, pressure and a new group hierarchy."
+          "headlineView": "a truly strong start is not just about three points, but redrawing the group picture",
+          "intro": "Sweden opened with a 5-1 win over Tunisia as Yasin Ayari scored twice and Alexander Isak and Viktor Gyokeres also found the net. Elsewhere, Japan twice came from behind to draw 2-2 with the Netherlands, while Cote d'Ivoire beat Ecuador 1-0 with a 90th-minute winner.",
+          "xiaziQuote": "A big team's first win is not just about points. It is about setting the tone.",
+          "doudouQuote": "Five goals is not a warm-up. It is an opening statement.",
+          "footerTakeaway": "A dominant opener can reshape both the table and the psychology of a group.",
+          "headlineFull": "Sweden beat Tunisia 5-1; a truly strong start is not just about three points, but redrawing the group picture."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000001",
+          "id": "30000000-0000-4000-8000-000000000011",
           "topicId": "20000000-0000-4000-8000-000000000001",
-          "title": "Sweden crush Tunisia and Côte d'Ivoire beat Ecuador",
-          "publisher": "SBS News",
-          "url": "https://www.sbs.com.au/news/article/fifa-world-cup-2026-results-june-15/ocls1mcso",
+          "title": "Sweden 5-1 Tunisia: World Cup 2026",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/football/live/2026/jun/15/fifa-world-cup-2026-live-sweden-v-tunisia-updates-swe-vs-tun-group-f-match-score-latest",
           "publishedAt": "2026-06-15T00:00:00Z",
           "sourceType": "publisher",
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
+        },
+        {
+          "id": "30000000-0000-4000-8000-000000000012",
+          "topicId": "20000000-0000-4000-8000-000000000001",
+          "title": "Netherlands vs Japan highlights",
+          "publisher": "FOX Sports",
+          "url": "https://www.foxsports.com/watch/fmc-y854dpm391bsi95a",
+          "publishedAt": "2026-06-15T00:00:00Z",
+          "sourceType": "publisher",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": false
         }
       ]
     },
     {
       "id": "20000000-0000-4000-8000-000000000002",
       "issueId": "10000000-0000-4000-8000-000000000003",
-      "slug": "ai-governance-crossroads",
+      "slug": "energy-transition-grid",
       "rank": 2,
-      "category": "technology",
-      "region": "United States",
+      "category": "international",
+      "region": "Middle East",
       "countryCodes": [
-        "US"
+        "US",
+        "IR"
       ],
       "eventTime": null,
-      "isDeveloping": false,
+      "isDeveloping": true,
       "verificationStatus": "verified",
-      "scoreTotal": 92,
-      "storyId": "salesforce_acquires_fin_2026",
-      "storyStatus": "new",
-      "followupDay": 1,
+      "scoreTotal": 98,
+      "storyId": "us_iran_peace_framework_2026",
+      "storyStatus": "followup",
+      "followupDay": 2,
       "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "AI 与科技",
-          "headlineFact": "Salesforce 以 36 亿美元收购 Fin",
-          "headlineView": "企业 AI 的胜负手，正从会回答转向能独立结案",
-          "headlineFull": "Salesforce 以 36 亿美元收购 Fin；企业 AI 的胜负手，正从会回答转向能独立结案。",
-          "intro": "Salesforce 签署协议，以约 36 亿美元收购原 Intercom 旗下的 AI 客服公司 Fin，并计划把其跨聊天、邮件、电话等渠道的自主服务能力并入 Agentforce。企业软件的竞争正从“给员工一个助手”转向“让智能体直接承担流程结果”，可靠性、权限和交接机制会比演示效果更值钱。",
-          "xiaziQuote": "当 AI 开始对结果负责，软件才真正进入智能体时代。",
-          "doudouQuote": "以前客服说“帮你转接”，以后 AI 可能说“已经办完”。",
-          "footerTakeaway": "企业 AI 的价值单位，正在从回答次数变成完成任务数。"
+          "categoryLabel": "中东局势",
+          "headlineFact": "美国与伊朗达成初步和平框架",
+          "headlineView": "真正的和平，要从宣布走到签字，再从签字走到执行",
+          "intro": "美国与伊朗确认达成初步协议，内容涉及永久停火、结束战争以及重新开放霍尔木兹海峡，正式文件预计稍后签署。消息推动油价下跌、全球风险资产回升，但核问题、制裁、航运恢复以及地区各方能否保持克制，仍是协议落地的关键。",
+          "xiaziQuote": "和平最难的，不是宣布，而是兑现。",
+          "doudouQuote": "会开完了，真正的考题才刚开始。",
+          "footerTakeaway": "框架是重大转折，正式签署与执行才决定和平能走多远。",
+          "headlineFull": "美国与伊朗达成初步和平框架；真正的和平，要从宣布走到签字，再从签字走到执行。"
         },
         "en-US": {
-          "categoryLabel": "AI & Technology",
-          "headlineFact": "Salesforce will acquire Fin for $3.6 billion",
-          "headlineView": "enterprise AI is shifting from answering questions to closing cases",
-          "headlineFull": "Salesforce will acquire Fin for $3.6 billion; enterprise AI is shifting from answering questions to closing cases.",
-          "intro": "Salesforce signed a definitive agreement to acquire Fin, formerly Intercom, for about $3.6 billion and plans to bring its autonomous customer-service capabilities into Agentforce. Enterprise software is moving beyond assistants toward agents accountable for workflow outcomes, making reliability, permissions and human handoffs more valuable than polished demos.",
-          "xiaziQuote": "The agent era begins when AI becomes accountable for outcomes.",
-          "doudouQuote": "Customer support used to transfer you. The agent now wants to finish the job.",
-          "footerTakeaway": "Enterprise AI will be measured by completed work, not generated answers."
+          "categoryLabel": "Middle East",
+          "headlineFact": "The U.S. and Iran reach an initial peace framework",
+          "headlineView": "real peace must move from announcement to signature, and from signature to execution",
+          "intro": "The United States and Iran confirmed an initial framework covering a permanent ceasefire, an end to the war and the reopening of the Strait of Hormuz, with formal documents expected later. Markets rallied, but nuclear issues, sanctions, shipping and regional restraint remain the decisive tests.",
+          "xiaziQuote": "Peace is hardest not at the moment of announcement, but at the moment of delivery.",
+          "doudouQuote": "The meeting may be over, but the real exam is just beginning.",
+          "footerTakeaway": "The framework is a major turn; signatures and implementation will determine its durability.",
+          "headlineFull": "The U.S. and Iran reach an initial peace framework; real peace must move from announcement to signature, and from signature to execution."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000002",
+          "id": "30000000-0000-4000-8000-000000000021",
           "topicId": "20000000-0000-4000-8000-000000000002",
-          "title": "Salesforce Signs Definitive Agreement to Acquire Fin",
-          "publisher": "Salesforce",
-          "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Signs-Definitive-Agreement-to-Acquire-Fin/default.aspx",
+          "title": "Trump arrives at G7 summit after announcing a deal to end the Iran war",
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/992fb57188610d04660fb342c53e639e",
           "publishedAt": "2026-06-15T00:00:00Z",
-          "sourceType": "official",
+          "sourceType": "wire",
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
@@ -124,8 +140,118 @@
     {
       "id": "20000000-0000-4000-8000-000000000003",
       "issueId": "10000000-0000-4000-8000-000000000003",
-      "slug": "trade-routes-rewired",
+      "slug": "culture-restoration-digital",
       "rank": 3,
+      "category": "culture",
+      "region": "United Kingdom",
+      "countryCodes": [
+        "GB"
+      ],
+      "eventTime": null,
+      "isDeveloping": false,
+      "verificationStatus": "verified",
+      "scoreTotal": 91,
+      "storyId": "uk_under16_social_media_ban_2026",
+      "storyStatus": "new",
+      "followupDay": 1,
+      "informationIncrementScore": 100,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "互联网与未成年人",
+          "headlineFact": "英国宣布限制 16 岁以下使用主流社交媒体",
+          "headlineView": "保护未成年人，正从平台自律走向国家规则",
+          "intro": "英国宣布将对 16 岁以下用户使用 TikTok、Instagram、YouTube、Snapchat 等社交平台施加更严格限制，部分游戏、直播、陌生人私信和无限滚动功能也将受到监管。政策预计于明年春季前后实施，但年龄验证、规避手段和执行成本仍将面临现实考验。",
+          "xiaziQuote": "技术越快，边界越要提早想清楚。",
+          "doudouQuote": "刷屏很轻松，管住算法可没那么轻松。",
+          "footerTakeaway": "儿童网络安全正从家庭选择转向平台与国家共同负责。",
+          "headlineFull": "英国宣布限制 16 岁以下使用主流社交媒体；保护未成年人，正从平台自律走向国家规则。"
+        },
+        "en-US": {
+          "categoryLabel": "Internet & Minors",
+          "headlineFact": "Britain will restrict major social platforms for under-16s",
+          "headlineView": "protecting minors is moving from platform self-discipline to national rules",
+          "intro": "Britain plans tighter restrictions for users under 16 across TikTok, Instagram, YouTube, Snapchat and other platforms, alongside controls on gaming, livestreaming, stranger messaging and infinite scrolling. Implementation is expected around next spring, while age checks and enforcement remain difficult.",
+          "xiaziQuote": "The faster technology moves, the earlier the boundary must be defined.",
+          "doudouQuote": "Scrolling is easy. Setting the rules never is.",
+          "footerTakeaway": "Child online safety is becoming a shared duty of families, platforms and the state.",
+          "headlineFull": "Britain will restrict major social platforms for under-16s; protecting minors is moving from platform self-discipline to national rules."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000031",
+          "topicId": "20000000-0000-4000-8000-000000000003",
+          "title": "Social media to be banned for under-16s",
+          "publisher": "UK Government",
+          "url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back",
+          "publishedAt": "2026-06-15T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000004",
+      "issueId": "10000000-0000-4000-8000-000000000003",
+      "slug": "ai-governance-crossroads",
+      "rank": 4,
+      "category": "technology",
+      "region": "United States",
+      "countryCodes": [
+        "US"
+      ],
+      "eventTime": null,
+      "isDeveloping": false,
+      "verificationStatus": "verified",
+      "scoreTotal": 90,
+      "storyId": "xai_openai_trade_secret_case_2026",
+      "storyStatus": "new",
+      "followupDay": 1,
+      "informationIncrementScore": 100,
+      "localizations": {
+        "zh-CN": {
+          "categoryLabel": "AI 与法律",
+          "headlineFact": "法院驳回 xAI 对 OpenAI 的商业秘密诉讼",
+          "headlineView": "AI 竞争不只拼模型，也在重画人才与知识产权边界",
+          "intro": "美国联邦法官驳回 xAI 针对 OpenAI 提起的商业秘密诉讼，并认为 xAI 未能证明 OpenAI 诱导前员工窃取或披露机密。本案围绕人才流动、代码、模型研发资料和企业秘密展开，也说明 AI 巨头之间的竞争正从算力、产品和融资延伸到法庭。",
+          "xiaziQuote": "技术的边界，最终也要回到规则里。",
+          "doudouQuote": "模型在打架，律师也没闲着。",
+          "footerTakeaway": "人才流动和知识产权正在成为 AI 竞争的第二战场。",
+          "headlineFull": "法院驳回 xAI 对 OpenAI 的商业秘密诉讼；AI 竞争不只拼模型，也在重画人才与知识产权边界。"
+        },
+        "en-US": {
+          "categoryLabel": "AI & Law",
+          "headlineFact": "A court dismisses xAI's trade secret case against OpenAI",
+          "headlineView": "the AI race is now also about talent and intellectual property boundaries",
+          "intro": "A U.S. federal judge dismissed xAI's trade secret lawsuit against OpenAI, finding that xAI had not shown OpenAI induced a former employee to steal or disclose confidential information. The dispute shows AI competition expanding from models and compute into talent mobility, data use and intellectual property.",
+          "xiaziQuote": "The boundaries of technology eventually have to return to the rules.",
+          "doudouQuote": "The models are fighting, and the lawyers are busy too.",
+          "footerTakeaway": "Talent and intellectual property are becoming a second front in the AI race.",
+          "headlineFull": "A court dismisses xAI's trade secret case against OpenAI; the AI race is now also about talent and intellectual property boundaries."
+        }
+      },
+      "sources": [
+        {
+          "id": "30000000-0000-4000-8000-000000000041",
+          "topicId": "20000000-0000-4000-8000-000000000004",
+          "title": "OpenAI wins dismissal of trade secret lawsuit by Elon Musk's xAI",
+          "publisher": "Reuters via The Straits Times",
+          "url": "https://www.straitstimes.com/business/openai-wins-dismissal-of-trade-secret-lawsuit-by-musks-xai",
+          "publishedAt": "2026-06-15T00:00:00Z",
+          "sourceType": "wire",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        }
+      ]
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000005",
+      "issueId": "10000000-0000-4000-8000-000000000003",
+      "slug": "trade-routes-rewired",
+      "rank": 5,
       "category": "business",
       "region": "United States",
       "countryCodes": [
@@ -141,30 +267,30 @@
       "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "商业与资本",
-          "headlineFact": "Fox 以约 220 亿美元收购 Roku",
-          "headlineView": "流媒体下半场，内容与入口必须坐到同一张桌上",
-          "headlineFull": "Fox 以约 220 亿美元收购 Roku；流媒体下半场，内容与入口必须坐到同一张桌上。",
-          "intro": "Fox 宣布以现金加股票方式收购 Roku，企业价值约 220 亿美元，交易价为每股 160 美元。合并后，Fox 的体育、新闻与 Tubi 内容将连接 Roku 覆盖逾一亿家庭的电视操作系统和广告平台。流媒体竞争已从单纯抢内容，进入同时争夺终端入口、用户数据和广告效率的整合阶段。",
-          "xiaziQuote": "掌握内容决定看什么，掌握入口决定先看到谁。",
-          "doudouQuote": "遥控器看着没变，背后的老板先换了。",
-          "footerTakeaway": "连接电视时代的核心资产，是内容、系统与广告的闭环。"
+          "categoryLabel": "媒体与商业",
+          "headlineFact": "Fox 与 Roku 达成约 220 亿美元收购协议",
+          "headlineView": "流媒体下一战，争的不只是内容，更是入口、数据与分发权",
+          "intro": "Fox 宣布以现金加股票方式收购 Roku，交易估值约 220 亿美元，预计在获得监管批准后于 2027 年上半年完成。Roku 覆盖超过一亿户家庭，Fox 则拥有新闻、体育和直播内容，两者结合意味着传统媒体正在主动争夺智能电视入口和广告数据。",
+          "xiaziQuote": "内容决定吸引力，入口决定控制力。",
+          "doudouQuote": "看似买平台，本质是在买流量总闸门。",
+          "footerTakeaway": "流媒体竞争正在从内容库存升级为内容、入口与数据的闭环。",
+          "headlineFull": "Fox 与 Roku 达成约 220 亿美元收购协议；流媒体下一战，争的不只是内容，更是入口、数据与分发权。"
         },
         "en-US": {
-          "categoryLabel": "Business & Capital",
-          "headlineFact": "Fox will acquire Roku for about $22 billion",
-          "headlineView": "streaming's next phase puts content and distribution at the same table",
-          "headlineFull": "Fox will acquire Roku for about $22 billion; streaming's next phase puts content and distribution at the same table.",
-          "intro": "Fox agreed to acquire Roku in a cash-and-stock transaction valuing the company at about $22 billion in enterprise value, or $160 per share. The deal links Fox's live sports, news and Tubi content with Roku's television operating system, advertising platform and reach into more than 100 million households.",
-          "xiaziQuote": "Content shapes what people watch; distribution shapes what they see first.",
-          "doudouQuote": "The remote looks the same. The owner behind it does not.",
-          "footerTakeaway": "Connected television is consolidating content, software and advertising."
+          "categoryLabel": "Media & Business",
+          "headlineFact": "Fox and Roku strike a $22 billion acquisition deal",
+          "headlineView": "the next streaming battle is about content, entry points, data and distribution",
+          "intro": "Fox agreed to acquire Roku in a cash-and-stock deal valued at about $22 billion, expected to close in the first half of 2027 after regulatory approval. Roku reaches more than 100 million households, while Fox brings news, sports and live programming to the combined platform.",
+          "xiaziQuote": "Content drives attraction; access determines control.",
+          "doudouQuote": "Buying a platform is really buying a traffic gate.",
+          "footerTakeaway": "Streaming competition is becoming a closed loop of content, access and user data.",
+          "headlineFull": "Fox and Roku strike a $22 billion acquisition deal; the next streaming battle is about content, entry points, data and distribution."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000003",
-          "topicId": "20000000-0000-4000-8000-000000000003",
+          "id": "30000000-0000-4000-8000-000000000051",
+          "topicId": "20000000-0000-4000-8000-000000000005",
           "title": "Fox Corporation to Acquire Roku, Inc.",
           "publisher": "Fox Corporation",
           "url": "https://www.foxcorporation.com/news/corp-press-releases/2026/fox-corporation-to-acquire-roku-inc/",
@@ -173,117 +299,18 @@
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
-        }
-      ]
-    },
-    {
-      "id": "20000000-0000-4000-8000-000000000004",
-      "issueId": "10000000-0000-4000-8000-000000000003",
-      "slug": "energy-transition-grid",
-      "rank": 4,
-      "category": "international",
-      "region": "Middle East",
-      "countryCodes": [
-        "US",
-        "IR",
-        "IL",
-        "LB"
-      ],
-      "eventTime": null,
-      "isDeveloping": true,
-      "verificationStatus": "verified",
-      "scoreTotal": 97,
-      "storyId": "us_iran_peace_framework_2026",
-      "storyStatus": "followup",
-      "followupDay": 2,
-      "informationIncrementScore": 100,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "国际政治",
-          "headlineFact": "美国与伊朗达成暂定停战框架",
-          "headlineView": "签字能暂停战争，执行才能证明和平",
-          "headlineFull": "美国与伊朗达成暂定停战框架；签字能暂停战争，执行才能证明和平。",
-          "intro": "美国与伊朗宣布达成暂定框架，计划延长停火、推动霍尔木兹海峡恢复通航，并用 60 天技术谈判处理核计划与制裁等难题。相比昨日“接近协议”，今天已跨过关键门槛，但正式文本、核查机制和以色列后续行动仍有不确定性。和平不是一条消息，而是一套经得住意外的执行系统。",
-          "xiaziQuote": "真正的协议，不只约束愿意签字的人，也要能管理不愿配合的变量。",
-          "doudouQuote": "先别急着开香槟，海峡里的雷还没清完。",
-          "footerTakeaway": "停火框架是重大转折，但可信度要由后续执行兑现。"
         },
-        "en-US": {
-          "categoryLabel": "International Politics",
-          "headlineFact": "The United States and Iran reach a tentative peace framework",
-          "headlineView": "signatures can pause a war, but implementation must prove the peace",
-          "headlineFull": "The United States and Iran reach a tentative peace framework; signatures can pause a war, but implementation must prove the peace.",
-          "intro": "The United States and Iran announced a tentative framework to extend the ceasefire, reopen the Strait of Hormuz and begin 60 days of technical talks on nuclear and sanctions issues. This moves beyond yesterday's near-deal, but the final text, verification and Israel's actions remain uncertain. Peace is not a headline; it is an execution system.",
-          "xiaziQuote": "A durable agreement must manage actors and variables beyond the signing table.",
-          "doudouQuote": "Keep the champagne closed until the mines are cleared.",
-          "footerTakeaway": "The framework is a major turn, but implementation will determine credibility."
-        }
-      },
-      "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000004",
-          "topicId": "20000000-0000-4000-8000-000000000004",
-          "title": "Trump arrives at G7 summit after announcing a deal to end the Iran war",
-          "publisher": "Associated Press",
-          "url": "https://apnews.com/article/992fb57188610d04660fb342c53e639e",
+          "id": "30000000-0000-4000-8000-000000000052",
+          "topicId": "20000000-0000-4000-8000-000000000005",
+          "title": "Fox strikes $22bn deal for Roku to fuel streaming push",
+          "publisher": "Reuters via The Guardian",
+          "url": "https://www.theguardian.com/media/2026/jun/15/fox-roku-acquisition-deal",
           "publishedAt": "2026-06-15T00:00:00Z",
           "sourceType": "wire",
           "sourceTier": 1,
           "locale": "en-US",
-          "isPrimary": true
-        }
-      ]
-    },
-    {
-      "id": "20000000-0000-4000-8000-000000000005",
-      "issueId": "10000000-0000-4000-8000-000000000003",
-      "slug": "global-health-readiness",
-      "rank": 5,
-      "category": "business",
-      "region": "Global",
-      "countryCodes": [],
-      "eventTime": null,
-      "isDeveloping": false,
-      "verificationStatus": "verified",
-      "scoreTotal": 91,
-      "storyId": "imf_global_economy_war_shock_2026",
-      "storyStatus": "new",
-      "followupDay": 1,
-      "informationIncrementScore": 100,
-      "localizations": {
-        "zh-CN": {
-          "categoryLabel": "全球经济",
-          "headlineFact": "IMF 称全球经济暂时扛住战争冲击",
-          "headlineView": "平均数看着稳定，脆弱国家却在替世界先付账",
-          "headlineFull": "IMF 称全球经济暂时扛住战争冲击；平均数看着稳定，脆弱国家却在替世界先付账。",
-          "intro": "IMF 表示，中东战争持续三个多月后，全球经济尚未出现整体衰退信号，人工智能投资和美中增长动能提供了缓冲；但战前以来油价仍高约 30%，欧洲、亚洲能源进口国和政策空间有限的非洲国家承压更重。所谓韧性并不平均，宏观稳定可能掩盖燃料、食品和融资成本的区域分化。",
-          "xiaziQuote": "全球经济的平均韧性，不能抵消弱势经济体的真实疼痛。",
-          "doudouQuote": "世界平均没事，常常意味着有人已经很有事。",
-          "footerTakeaway": "冲击没有消失，只是被储备、财政与技术投资暂时分摊。"
-        },
-        "en-US": {
-          "categoryLabel": "Global Economy",
-          "headlineFact": "The IMF says the global economy has endured the war shock so far",
-          "headlineView": "stable averages hide the countries paying first and most",
-          "headlineFull": "The IMF says the global economy has endured the war shock so far; stable averages hide the countries paying first and most.",
-          "intro": "The IMF says the world economy has not yet shown signs of a broad slowdown after more than three months of war in the Middle East, helped by AI investment and momentum in the United States and China. Yet oil remains about 30% above prewar levels, with energy importers and countries with limited policy space facing much heavier costs.",
-          "xiaziQuote": "Average resilience cannot erase the pain concentrated in weaker economies.",
-          "doudouQuote": "The world can look fine on average while someone is already in crisis.",
-          "footerTakeaway": "Reserves, policy support and technology investment are cushioning, not removing, the shock."
-        }
-      },
-      "sources": [
-        {
-          "id": "30000000-0000-4000-8000-000000000005",
-          "topicId": "20000000-0000-4000-8000-000000000005",
-          "title": "Global Economy Endures War Shock—So Far",
-          "publisher": "International Monetary Fund",
-          "url": "https://www.imf.org/en/blogs/articles/2026/06/15/global-economy-endures-war-shock-so-far",
-          "publishedAt": "2026-06-15T00:00:00Z",
-          "sourceType": "official",
-          "sourceTier": 1,
-          "locale": "en-US",
-          "isPrimary": true
+          "isPrimary": false
         }
       ]
     },
@@ -292,50 +319,52 @@
       "issueId": "10000000-0000-4000-8000-000000000003",
       "slug": "space-economy-orbit",
       "rank": 6,
-      "category": "science",
-      "region": "United States",
+      "category": "technology",
+      "region": "Europe",
       "countryCodes": [
-        "US"
+        "US",
+        "SE",
+        "NL"
       ],
       "eventTime": null,
-      "isDeveloping": false,
+      "isDeveloping": true,
       "verificationStatus": "verified",
-      "scoreTotal": 86,
-      "storyId": "nih_oriva_human_research_2026",
+      "scoreTotal": 89,
+      "storyId": "tesla_fsd_europe_safety_data_2026",
       "storyStatus": "new",
       "followupDay": 1,
       "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "科学与航天",
-          "headlineFact": "NIH 成立人体研究技术新办公室",
-          "headlineView": "替代动物实验的关键，不是口号，而是把新方法做成标准",
-          "headlineFull": "NIH 成立人体研究技术新办公室；替代动物实验的关键，不是口号，而是把新方法做成标准。",
-          "intro": "美国国立卫生研究院成立 ORIVA 办公室，协调人体组织模型、计算工具和其他非动物研究方法的开发、验证与规模化应用。器官芯片和三维组织模型要真正进入药物研发，难点不只在“能不能做”，还在结果是否可重复、监管是否认可、不同实验室能否使用同一套评价标准。",
-          "xiaziQuote": "科学进步需要新工具，也需要让新工具经得起验证。",
-          "doudouQuote": "少喊一次颠覆，多做一套可复现标准。",
-          "footerTakeaway": "人体相关模型正从实验室创新走向科研基础设施。"
+          "categoryLabel": "自动驾驶",
+          "headlineFact": "路透调查称特斯拉向欧洲监管机构提交具争议的 FSD 安全数据",
+          "headlineView": "自动驾驶想赢得许可，先要赢得数据可信度",
+          "intro": "路透调查称，特斯拉在争取 FSD 进入欧洲市场时，向瑞典和荷兰监管机构提供了自行发布的安全统计，一些独立交通安全研究者质疑其中的对比方法。自动驾驶不仅要在道路上证明能力，也必须让监管者相信其数据口径、公平性与可复核性。",
+          "xiaziQuote": "自动驾驶要先说服监管，再说服市场。",
+          "doudouQuote": "车会自己开，数据可不能自己说了算。",
+          "footerTakeaway": "自动驾驶审批既审技术，也审数据是否可信和可复核。",
+          "headlineFull": "路透调查称特斯拉向欧洲监管机构提交具争议的 FSD 安全数据；自动驾驶想赢得许可，先要赢得数据可信度。"
         },
         "en-US": {
-          "categoryLabel": "Science & Space",
-          "headlineFact": "NIH creates a new office for human-based research technologies",
-          "headlineView": "replacing animal studies requires standards, not slogans",
-          "headlineFull": "NIH creates a new office for human-based research technologies; replacing animal studies requires standards, not slogans.",
-          "intro": "The U.S. National Institutes of Health created ORIVA to coordinate the development, validation and scaling of human tissue models, computational tools and other nonanimal methods. For organ chips and 3D tissues to reshape drug development, they must become reproducible, regulator-ready and comparable across laboratories.",
-          "xiaziQuote": "Scientific progress needs new tools and rigorous ways to validate them.",
-          "doudouQuote": "One fewer disruption slogan, one more reproducible standard.",
-          "footerTakeaway": "Human-based models are moving from experiments toward research infrastructure."
+          "categoryLabel": "Autonomous Driving",
+          "headlineFact": "A Reuters investigation says Tesla submitted disputed FSD safety data to European regulators",
+          "headlineView": "autonomous driving must first win trust in its data",
+          "intro": "A Reuters investigation says Tesla presented self-published FSD safety statistics to regulators in Sweden and the Netherlands while seeking wider European approval. Independent traffic-safety researchers questioned the comparisons, putting data definitions, sampling and reproducibility alongside technical performance.",
+          "xiaziQuote": "Autonomous driving must convince regulators before it convinces the market.",
+          "doudouQuote": "Cars may drive themselves, but data cannot judge itself.",
+          "footerTakeaway": "Approval depends on credible and reviewable evidence as much as technical capability.",
+          "headlineFull": "A Reuters investigation says Tesla submitted disputed FSD safety data to European regulators; autonomous driving must first win trust in its data."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000006",
+          "id": "30000000-0000-4000-8000-000000000061",
           "topicId": "20000000-0000-4000-8000-000000000006",
-          "title": "NIH launches new office to advance human-based research and reduce animal use",
-          "publisher": "National Institutes of Health",
-          "url": "https://www.nih.gov/news-events/news-releases/nih-launches-new-office-advance-human-based-research-reduce-animal-use",
+          "title": "Tesla presented misleading Full Self-Driving safety data to European regulators",
+          "publisher": "Electrek, citing Reuters",
+          "url": "https://electrek.co/2026/06/15/tesla-fsd-misleading-safety-data-european-regulators/",
           "publishedAt": "2026-06-15T00:00:00Z",
-          "sourceType": "official",
+          "sourceType": "publisher",
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
@@ -345,52 +374,54 @@
     {
       "id": "20000000-0000-4000-8000-000000000007",
       "issueId": "10000000-0000-4000-8000-000000000003",
-      "slug": "culture-restoration-digital",
+      "slug": "global-health-readiness",
       "rank": 7,
-      "category": "culture",
-      "region": "United Kingdom",
+      "category": "international",
+      "region": "Europe",
       "countryCodes": [
-        "GB"
+        "UA",
+        "RU",
+        "FR"
       ],
       "eventTime": null,
-      "isDeveloping": false,
+      "isDeveloping": true,
       "verificationStatus": "verified",
-      "scoreTotal": 90,
-      "storyId": "uk_under16_social_media_ban_2026",
+      "scoreTotal": 92,
+      "storyId": "zelenskiy_putin_g7_meeting_offer_2026",
       "storyStatus": "new",
       "followupDay": 1,
       "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "社会与文化",
-          "headlineFact": "英国将禁止 16 岁以下儿童使用社交媒体",
-          "headlineView": "保护童年不能只靠关门，还要重做门后的产品逻辑",
-          "headlineFull": "英国将禁止 16 岁以下儿童使用社交媒体；保护童年不能只靠关门，还要重做门后的产品逻辑。",
-          "intro": "英国政府宣布将立法禁止社交平台向 16 岁以下用户提供服务，预计 2027 年春季生效，并加强年龄核验、陌生人互动和成瘾性设计限制。政策得到大量家长支持，也引发隐私、绕过机制和儿童转向更隐蔽平台的担忧。年龄门槛能止损，但真正难题仍是平台如何减少有害推荐。",
-          "xiaziQuote": "社会需要边界，产品也需要为自己的激励机制负责。",
-          "doudouQuote": "把门锁上容易，先问问孩子会不会改走窗户。",
-          "footerTakeaway": "儿童网络安全正在从家长责任转向平台制度责任。"
+          "categoryLabel": "俄乌局势",
+          "headlineFact": "泽连斯基称曾提议在 G7 期间会见普京，俄方未予接受",
+          "headlineView": "和平窗口不缺提议，缺的是双方都愿意走进去",
+          "intro": "乌克兰总统泽连斯基表示，他曾提议在法国 G7 峰会期间与俄罗斯总统普京会面，并获得美国与法国方面支持，但俄方没有表现出会谈意愿。与此同时，乌克兰继续寻求防空系统和国际援助，说明外交接触与战场压力仍在同步推进。",
+          "xiaziQuote": "真正难的不是开口，而是双方都愿意坐下。",
+          "doudouQuote": "会面的门没锁，问题是谁肯一起推开。",
+          "footerTakeaway": "外交提议存在，但互信与实质行动仍是和平进程的门槛。",
+          "headlineFull": "泽连斯基称曾提议在 G7 期间会见普京，俄方未予接受；和平窗口不缺提议，缺的是双方都愿意走进去。"
         },
         "en-US": {
-          "categoryLabel": "Society & Culture",
-          "headlineFact": "Britain will ban social media for children under 16",
-          "headlineView": "protecting childhood requires more than closing the front door",
-          "headlineFull": "Britain will ban social media for children under 16; protecting childhood requires more than closing the front door.",
-          "intro": "The UK government says it will bar social platforms from serving users under 16, with legislation expected before Christmas and protections planned for spring 2027. The plan adds age checks and limits on addictive or unsafe features, while raising concerns about privacy, circumvention and migration to less regulated spaces.",
-          "xiaziQuote": "Society needs boundaries, and platforms must own their incentive systems.",
-          "doudouQuote": "Locking the door is easy. Check whether the window is open.",
-          "footerTakeaway": "Child online safety is becoming a platform-level institutional duty."
+          "categoryLabel": "Russia-Ukraine",
+          "headlineFact": "Zelensky says he proposed meeting Putin during the G7, but Russia did not accept",
+          "headlineView": "peace windows lack two sides willing to walk through",
+          "intro": "Ukrainian President Volodymyr Zelensky said he proposed meeting Vladimir Putin during the G7 summit in France, with support from the United States and France, but Russia showed no willingness to talk. Ukraine is also seeking more air defenses and international aid as diplomacy and battlefield pressure continue in parallel.",
+          "xiaziQuote": "The hardest part is not opening the conversation. It is getting both sides to sit down.",
+          "doudouQuote": "The door to talks is not locked. The question is who will push it together.",
+          "footerTakeaway": "A proposal exists, but trust and substantive follow-through remain the real barriers.",
+          "headlineFull": "Zelensky says he proposed meeting Putin during the G7, but Russia did not accept; peace windows lack two sides willing to walk through."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000007",
+          "id": "30000000-0000-4000-8000-000000000071",
           "topicId": "20000000-0000-4000-8000-000000000007",
-          "title": "Social media to be banned for under-16s",
-          "publisher": "UK Government",
-          "url": "https://www.gov.uk/government/news/social-media-to-be-banned-for-under-16s-in-landmark-government-move-to-givekids-their-childhood-back",
+          "title": "Ukraine's Zelenskiy says he offered to meet Putin at G7",
+          "publisher": "Reuters via Internazionale",
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/15/ukraine-s-zelenskiy-says-he-offered-to-meet-putin-at-g7",
           "publishedAt": "2026-06-15T00:00:00Z",
-          "sourceType": "official",
+          "sourceType": "wire",
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
@@ -402,48 +433,51 @@
       "issueId": "10000000-0000-4000-8000-000000000003",
       "slug": "ocean-treaty-action",
       "rank": 8,
-      "category": "climate",
-      "region": "Global",
-      "countryCodes": [],
+      "category": "business",
+      "region": "Hong Kong",
+      "countryCodes": [
+        "HK",
+        "CN"
+      ],
       "eventTime": null,
       "isDeveloping": false,
       "verificationStatus": "verified",
-      "scoreTotal": 88,
-      "storyId": "global_mycorrhizal_network_map_2026",
+      "scoreTotal": 86,
+      "storyId": "hong_kong_first_five_year_plan_2026",
       "storyStatus": "new",
       "followupDay": 1,
       "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "环境与气候",
-          "headlineFact": "科学家首次绘出全球地下真菌网络",
-          "headlineView": "气候政策长期盯着树冠，却忽略了脚下的碳基础设施",
-          "headlineFull": "科学家首次绘出全球地下真菌网络；气候政策长期盯着树冠，却忽略了脚下的碳基础设施。",
-          "intro": "一项发表于《科学》的全球研究整合逾 1.6 万份土壤样本，估算菌根真菌丝总长约 110 万亿亿公里，每年帮助约 40 亿吨二氧化碳进入土壤。耕作、化肥和土地退化会显著削弱这套地下网络。保护气候不只是种多少树，也要看土壤能否继续保存植物交给它的碳。",
-          "xiaziQuote": "真正重要的生态基础设施，往往安静到看不见。",
-          "doudouQuote": "地球最大的物流网，居然连个 App 都没有。",
-          "footerTakeaway": "土壤真菌应进入碳核算、农业和生态修复的决策视野。"
+          "categoryLabel": "香港与经济治理",
+          "headlineFact": "香港启动首份五年规划公众咨询",
+          "headlineView": "自由市场城市正在引入更强的长期发展坐标",
+          "intro": "香港启动为期两个月的首份五年发展规划公众咨询，内容将衔接国家“十五五”规划，并涵盖金融、贸易、航运、北部都会区和大湾区融合等方向。它既希望为企业和个人提供更稳定的长期预期，也引发市场对政府规划与自由市场边界的讨论。",
+          "xiaziQuote": "短期繁看活力，长期竞争看方向。",
+          "doudouQuote": "市场讲效率，规划讲定力，两者未必冲突。",
+          "footerTakeaway": "香港正尝试在市场效率与长期发展坐标之间建立新平衡。",
+          "headlineFull": "香港启动首份五年规划公众咨询；自由市场城市正在引入更强的长期发展坐标。"
         },
         "en-US": {
-          "categoryLabel": "Environment & Climate",
-          "headlineFact": "Scientists produce the first global map of underground fungal networks",
-          "headlineView": "climate policy has watched the canopy while missing carbon infrastructure below",
-          "headlineFull": "Scientists produce the first global map of underground fungal networks; climate policy has watched the canopy while missing carbon infrastructure below.",
-          "intro": "A global study in Science combined more than 16,000 soil samples to estimate roughly 110 quadrillion kilometers of mycorrhizal fungal threads, moving about four billion tonnes of carbon dioxide into soils each year. Farming, fertilizer and land degradation can sharply reduce this hidden network and its ecological services.",
-          "xiaziQuote": "The most important ecological infrastructure is often quiet and invisible.",
-          "doudouQuote": "Earth's largest logistics network somehow runs without an app.",
-          "footerTakeaway": "Soil fungi belong in climate accounting, agriculture and restoration policy."
+          "categoryLabel": "Hong Kong & Economic Governance",
+          "headlineFact": "Hong Kong launches public consultation on its first five-year plan",
+          "headlineView": "a free-market city is introducing a stronger long-term development compass",
+          "intro": "Hong Kong opened a two-month public consultation on its first five-year development plan, aligning with China's 15th Five-Year Plan and covering finance, trade, shipping, the Northern Metropolis and Greater Bay Area integration. The move seeks greater long-term certainty while reopening debate about planning and free markets.",
+          "xiaziQuote": "In the short term, prosperity shows vitality. In the long term, competitiveness needs direction.",
+          "doudouQuote": "Markets speak of efficiency, planning speaks of focus. The two do not have to clash.",
+          "footerTakeaway": "Hong Kong is testing a new balance between market efficiency and long-term direction.",
+          "headlineFull": "Hong Kong launches public consultation on its first five-year plan; a free-market city is introducing a stronger long-term development compass."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000008",
+          "id": "30000000-0000-4000-8000-000000000081",
           "topicId": "20000000-0000-4000-8000-000000000008",
-          "title": "Global maps of mycorrhizal fungal networks",
-          "publisher": "Science",
-          "url": "https://www.science.org/doi/10.1126/science.adu4373",
-          "publishedAt": "2026-06-11T00:00:00Z",
-          "sourceType": "research",
+          "title": "Hong Kong opens consultation on first 5-year plan",
+          "publisher": "Associated Press",
+          "url": "https://apnews.com/article/b978eafd937901d62d849207dc7c148e",
+          "publishedAt": "2026-06-15T00:00:00Z",
+          "sourceType": "wire",
           "sourceTier": 1,
           "locale": "en-US",
           "isPrimary": true
@@ -455,54 +489,67 @@
       "issueId": "10000000-0000-4000-8000-000000000003",
       "slug": "climate-adaptation-city",
       "rank": 9,
-      "category": "science",
-      "region": "Central Africa",
+      "category": "technology",
+      "region": "North America",
       "countryCodes": [
-        "CD",
-        "UG"
+        "US",
+        "CA",
+        "CN"
       ],
       "eventTime": null,
-      "isDeveloping": true,
+      "isDeveloping": false,
       "verificationStatus": "verified",
-      "scoreTotal": 95,
-      "storyId": "drc_uganda_ebola_bundibugyo_2026",
-      "storyStatus": "followup",
-      "followupDay": 2,
-      "informationIncrementScore": 80,
+      "scoreTotal": 91,
+      "storyId": "google_unc6508_research_intrusions_2026",
+      "storyStatus": "new",
+      "followupDay": 1,
+      "informationIncrementScore": 100,
       "localizations": {
         "zh-CN": {
-          "categoryLabel": "编辑精选",
-          "headlineFact": "刚果（金）埃博拉单日新增 72 例",
-          "headlineView": "病例跳升既说明传播加快，也暴露追踪系统追不上人群流动",
-          "headlineFull": "刚果（金）埃博拉单日新增 72 例；病例跳升既说明传播加快，也暴露追踪系统追不上人群流动。",
-          "intro": "刚果（金）卫生部门报告 24 小时新增 72 例，确诊总数升至 782 例、死亡 181 例，成为本轮疫情最显著的单日增幅之一。疫情集中在冲突与人口流动频繁的东部地区，接触者追踪覆盖率仅约 56%。检测能力提升解释了部分增长，但医疗承载、跨境传播和稀有 Bundibugyo 病毒缺乏获批疫苗仍是核心风险。",
-          "xiaziQuote": "疫情数字突然上升时，既要看病毒，也要看系统终于发现了什么。",
-          "doudouQuote": "病毒跑得快，报表可不能还坐慢车。",
-          "footerTakeaway": "这不是重复病例数，而是传播速度与响应能力同时恶化的新信号。"
+          "categoryLabel": "网络安全",
+          "headlineFact": "Google 称中国关联黑客长期渗透美加研究机构",
+          "headlineView": "科研竞争的前线，已经延伸到邮箱、数据库与登录凭证",
+          "intro": "Google 威胁情报团队称，一个被其编号为 UNC6508 的中国关联黑客组织，曾持续一年多入侵美国和加拿大的医学、学术及军事研究机构，目标涉及 AI、无人系统、公共卫生和印太军事战略。研究成果越有价值，围绕数据和人才的暗战就越激烈。",
+          "xiaziQuote": "知识越值钱，围绕它的暗战就越激烈。",
+          "doudouQuote": "实验室看起来安静，数据世界可一点都不安静。",
+          "footerTakeaway": "高价值科研机构必须把身份、邮件和数据库视为同一条安全防线。",
+          "headlineFull": "Google 称中国关联黑客长期渗透美加研究机构；科研竞争的前线，已经延伸到邮箱、数据库与登录凭证。"
         },
         "en-US": {
-          "categoryLabel": "Editor's Pick",
-          "headlineFact": "DR Congo reports 72 new Ebola cases in one day",
-          "headlineView": "the jump reflects faster spread and a tracing system falling behind mobility",
-          "headlineFull": "DR Congo reports 72 new Ebola cases in one day; the jump reflects faster spread and a tracing system falling behind mobility.",
-          "intro": "Congolese authorities reported 72 new infections in 24 hours, taking the outbreak to 782 confirmed cases and 181 deaths. The outbreak is concentrated in conflict-affected eastern areas, while contact tracing covers only about 56% of exposed people. Better testing explains part of the rise, but capacity, cross-border spread and the lack of an approved Bundibugyo vaccine remain critical risks.",
-          "xiaziQuote": "A sudden rise can reveal both faster transmission and what the system finally detected.",
-          "doudouQuote": "The virus moves fast. The reporting system cannot take the slow train.",
-          "footerTakeaway": "This is a new warning about transmission speed and response capacity, not a repeated total."
+          "categoryLabel": "Cybersecurity",
+          "headlineFact": "Google says Chinese-linked hackers infiltrated U.S. and Canadian research institutions",
+          "headlineView": "the front line now extends to inboxes, databases and login credentials",
+          "intro": "Google says UNC6508, a China-linked threat actor, spent more than a year inside U.S. and Canadian medical, academic and military research institutions. The collection targeted AI, uncrewed systems, public health and Indo-Pacific military strategy through compromised applications, credentials and email rules.",
+          "xiaziQuote": "The more valuable knowledge becomes, the fiercer the hidden war around it.",
+          "doudouQuote": "Labs may look quiet, but their data worlds are anything but.",
+          "footerTakeaway": "Research security now requires one defensive line across identity, email and databases.",
+          "headlineFull": "Google says Chinese-linked hackers infiltrated U.S. and Canadian research institutions; the front line now extends to inboxes, databases and login credentials."
         }
       },
       "sources": [
         {
-          "id": "30000000-0000-4000-8000-000000000009",
+          "id": "30000000-0000-4000-8000-000000000091",
           "topicId": "20000000-0000-4000-8000-000000000009",
-          "title": "Congo reports large daily jump in Ebola cases",
-          "publisher": "Associated Press",
-          "url": "https://apnews.com/article/5fa1c56231d700061123e37336eee6fd",
+          "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor",
+          "publisher": "Google Threat Intelligence Group",
+          "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research",
+          "publishedAt": "2026-06-15T00:00:00Z",
+          "sourceType": "official",
+          "sourceTier": 1,
+          "locale": "en-US",
+          "isPrimary": true
+        },
+        {
+          "id": "30000000-0000-4000-8000-000000000092",
+          "topicId": "20000000-0000-4000-8000-000000000009",
+          "title": "Chinese-linked hackers targeted U.S., Canadian research facilities",
+          "publisher": "Reuters via Internazionale",
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/15/chinese-linked-hackers-targeted-u-s-canadian-research-facilities-for-a-year-google-says",
           "publishedAt": "2026-06-15T00:00:00Z",
           "sourceType": "wire",
           "sourceTier": 1,
           "locale": "en-US",
-          "isPrimary": true
+          "isPrimary": false
         }
       ]
     }
