@@ -4,4 +4,4 @@ Disallow: /api/admin/
 Disallow: /zh/admin/
 Disallow: /en/admin/
 
-Sitemap: https://vilesaint.com/sitemap.xml
+Sitemap: https://pluto.hk/sitemap.xml
