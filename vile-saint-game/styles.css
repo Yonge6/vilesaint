@@ -1,0 +1,567 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --ink: #09080b;
+  --night: #121017;
+  --panel: rgba(12, 12, 15, 0.76);
+  --panel-strong: rgba(16, 16, 21, 0.9);
+  --text: #f7f0e6;
+  --muted: #a7a0a2;
+  --dim: #6f6970;
+  --gold: #d8ad62;
+  --amber: #ffcf7d;
+  --blood: #b83e51;
+  --moon: #91b9c9;
+  --grace: #9cc7a7;
+  --curse: #ad5c8a;
+  --line: rgba(255, 239, 210, 0.13);
+  --line-strong: rgba(216, 173, 98, 0.42);
+  --shadow: rgba(0, 0, 0, 0.42);
+  --glass: rgba(255, 255, 255, 0.065);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 100%) 0 0 / 42px 42px,
+    radial-gradient(circle at 18% 8%, rgba(216, 173, 98, 0.12), transparent 28rem),
+    radial-gradient(circle at 82% 78%, rgba(145, 185, 201, 0.1), transparent 30rem),
+    linear-gradient(180deg, #07080a, #121116 48%, #08090c);
+  color: var(--text);
+  font-family:
+    "Cormorant Garamond", Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 7px 7px;
+  mix-blend-mode: soft-light;
+}
+
+button {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1280px, calc(100vw - 28px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px 0 18px;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 16px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.sigil {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(255, 207, 125, 0.22), transparent 1.2rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.01));
+  color: var(--amber);
+  font-size: 30px;
+  box-shadow: inset 0 0 20px rgba(216, 173, 98, 0.08), 0 16px 42px var(--shadow);
+}
+
+.sigil::after {
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(216, 173, 98, 0.22);
+  border-radius: 5px;
+  content: "";
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(31px, 4vw, 58px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+#tagline {
+  max-width: 680px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 14px;
+}
+
+.top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.pill,
+.ghost,
+.primary {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.pill,
+.ghost {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 13px;
+}
+
+.pill.active {
+  border-color: var(--line-strong);
+  background: rgba(216, 173, 98, 0.13);
+  color: var(--amber);
+}
+
+.ghost:hover,
+.pill:hover,
+.primary:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 207, 125, 0.55);
+  background: linear-gradient(135deg, #f1d394, #b97947 58%, #8e3341);
+  color: #160d0d;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-weight: 850;
+  box-shadow: 0 18px 38px rgba(138, 71, 42, 0.25);
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 372px;
+  gap: 16px;
+  align-items: start;
+}
+
+.canvas-card,
+.panel section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  backdrop-filter: blur(18px) saturate(132%);
+  box-shadow: 0 24px 70px var(--shadow);
+}
+
+.canvas-card {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 239, 210, 0.08), rgba(255, 239, 210, 0.015)),
+    var(--panel-strong);
+}
+
+.canvas-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(216, 173, 98, 0.18), transparent 22%, transparent 78%, rgba(145, 185, 201, 0.11)),
+    radial-gradient(circle at 50% 110%, rgba(184, 62, 81, 0.16), transparent 22rem);
+}
+
+#gameCanvas {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 150px);
+  border: 1px solid rgba(255, 239, 210, 0.1);
+  border-radius: 6px;
+  outline: none;
+  background: #100d12;
+  image-rendering: pixelated;
+}
+
+.overlay {
+  position: absolute;
+  inset: 10px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(25, 19, 24, 0.28), rgba(8, 7, 10, 0.94)),
+    rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-card {
+  width: min(560px, 100%);
+  padding: 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 239, 210, 0.08), transparent),
+    rgba(15, 12, 16, 0.9);
+  text-align: center;
+  box-shadow: inset 0 0 80px rgba(216, 173, 98, 0.05);
+}
+
+.overlay-card h2 {
+  margin-bottom: 12px;
+  font-size: clamp(38px, 6vw, 78px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.overlay-card p {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  line-height: 1.78;
+}
+
+.panel {
+  display: grid;
+  gap: 12px;
+}
+
+.panel section {
+  padding: 17px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.story-box h2 {
+  margin-bottom: 9px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.story-box p,
+.legend-box p {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.objective {
+  padding: 12px;
+  border: 1px solid rgba(216, 173, 98, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(216, 173, 98, 0.1), rgba(145, 185, 201, 0.05)),
+    rgba(0, 0, 0, 0.16);
+}
+
+.objective span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--amber);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.objective strong {
+  display: block;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.message {
+  min-height: 50px;
+  margin: 12px 0 0;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 239, 210, 0.08);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.message.success {
+  border-color: rgba(255, 207, 125, 0.72);
+  background:
+    linear-gradient(90deg, rgba(216, 173, 98, 0.22), rgba(145, 185, 201, 0.12)),
+    rgba(0, 0, 0, 0.22);
+  color: #fff6df;
+  box-shadow: 0 0 28px rgba(216, 173, 98, 0.18);
+}
+
+.stats-box {
+  display: grid;
+  gap: 11px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 38px;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 13px;
+}
+
+.stat-row b {
+  color: var(--text);
+  text-align: right;
+}
+
+.bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.bar i {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+
+#fearBar {
+  background: linear-gradient(90deg, #3a2028, var(--blood));
+}
+
+#kindBar {
+  background: linear-gradient(90deg, #23383b, var(--moon));
+}
+
+#trustBar {
+  background: linear-gradient(90deg, #243728, var(--grace));
+}
+
+#curseBar {
+  background: linear-gradient(90deg, #2a1523, var(--curse));
+}
+
+#energyBar {
+  background: linear-gradient(90deg, #1b2236, #8067b5);
+}
+
+.legend-box h3 {
+  margin-bottom: 9px;
+  font-size: 22px;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.legend-grid span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 12px;
+}
+
+.legend-grid em {
+  font-style: normal;
+}
+
+.tile {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255, 239, 210, 0.14);
+  border-radius: 4px;
+}
+
+.tile.wall {
+  background: #282531;
+}
+
+.tile.shadow {
+  background: #161a2a;
+}
+
+.tile.exit {
+  background: linear-gradient(135deg, var(--amber), var(--moon));
+}
+
+.tile.vision {
+  background: rgba(184, 62, 81, 0.32);
+}
+
+.mobile-controls {
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(7, 8, 10, 0.74);
+}
+
+.dpad {
+  display: grid;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dpad > div,
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.mobile-controls button {
+  min-width: 62px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 239, 210, 0.15);
+  border-radius: 8px;
+  background: var(--glass);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.mobile-controls button:hover {
+  border-color: rgba(255, 207, 125, 0.45);
+  background: rgba(255, 255, 255, 0.095);
+  transform: translateY(-1px);
+}
+
+.mobile-controls button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.action-buttons button {
+  min-width: 118px;
+  min-height: 48px;
+}
+
+.action-buttons .action-primary {
+  border-color: rgba(255, 226, 165, 0.82);
+  background: linear-gradient(135deg, #ffe2a5 0%, #d8ad62 48%, #f07468 100%);
+  color: #120c08;
+  box-shadow: 0 16px 38px rgba(216, 173, 98, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.footer {
+  margin-top: 13px;
+  color: var(--dim);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #gameCanvas {
+    max-height: none;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100vw - 16px, 1280px);
+    padding-top: 12px;
+  }
+
+  .topbar {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .top-actions {
+    justify-content: flex-start;
+  }
+
+  .brand {
+    align-items: flex-start;
+  }
+
+  .sigil {
+    width: 46px;
+    height: 46px;
+    font-size: 25px;
+  }
+
+  .overlay-card {
+    padding: 20px;
+  }
+
+  .legend-grid {
+    grid-template-columns: 1fr;
+  }
+}

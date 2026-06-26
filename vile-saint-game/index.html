@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vile Saint</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="sigil" aria-hidden="true">☾</div>
+        <div>
+          <h1>Vile Saint</h1>
+          <p id="tagline">他们叫你怪物。你仍然选择拯救他们。</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button id="langZh" class="pill active" type="button">中文</button>
+        <button id="langEn" class="pill" type="button">English</button>
+        <button id="restartBtn" class="ghost" type="button">重开</button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="canvas-card" aria-label="Game canvas area">
+        <canvas id="gameCanvas" width="720" height="480" tabindex="0" aria-label="Vile Saint game canvas"></canvas>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <p class="eyebrow" id="overlayEyebrow">温柔暗黑童话小游戏</p>
+            <h2 id="overlayTitle">Vile Saint</h2>
+            <p id="overlayBody">
+              你看起来像恶魔，所以没人相信你是好人。夜晚回到村庄，避开目光，偷偷完成善事。
+            </p>
+            <button id="startBtn" class="primary" type="button">开始游戏</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <section class="story-box">
+          <p class="eyebrow" id="levelLabel">第 1 夜</p>
+          <h2 id="levelTitle">迷路的小孩</h2>
+          <p id="levelIntro">村里人说森林里有怪物。今晚，一个小孩真的迷路了。</p>
+          <div class="objective">
+            <span id="objectiveCaption">目标</span>
+            <strong id="objectiveText">找到小孩，帮他回家，然后从月门离开。</strong>
+          </div>
+          <p id="message" class="message">方向键或 WASD 移动，空格互动，E 使用影幕。</p>
+        </section>
+
+        <section class="stats-box" aria-label="Stats">
+          <div class="stat-row">
+            <span id="fearLabel">恐惧</span>
+            <div class="bar"><i id="fearBar"></i></div>
+            <b id="fearValue">0</b>
+          </div>
+          <div class="stat-row">
+            <span id="kindLabel">善意</span>
+            <div class="bar"><i id="kindBar"></i></div>
+            <b id="kindValue">0</b>
+          </div>
+          <div class="stat-row">
+            <span id="trustLabel">信任</span>
+            <div class="bar"><i id="trustBar"></i></div>
+            <b id="trustValue">0</b>
+          </div>
+          <div class="stat-row">
+            <span id="curseLabel">诅咒</span>
+            <div class="bar"><i id="curseBar"></i></div>
+            <b id="curseValue">100</b>
+          </div>
+          <div class="stat-row">
+            <span id="shadowLabel">影力</span>
+            <div class="bar"><i id="energyBar"></i></div>
+            <b id="energyValue">100</b>
+          </div>
+        </section>
+
+        <section class="legend-box">
+          <h3 id="howToTitle">操作</h3>
+          <p id="howToText">移动到目标旁边按空格。站在阴影格或按 E 使用影幕时，村民看不见你。</p>
+          <div class="legend-grid">
+            <span><i class="tile wall"></i><em id="legendWall">墙/树</em></span>
+            <span><i class="tile shadow"></i><em id="legendShadow">阴影</em></span>
+            <span><i class="tile exit"></i><em id="legendExit">月门</em></span>
+            <span><i class="tile vision"></i><em id="legendVision">视线</em></span>
+          </div>
+        </section>
+
+        <section class="mobile-controls" aria-label="Game controls">
+          <div class="dpad">
+            <button data-action="up" type="button" aria-label="Move up">▲</button>
+            <div>
+              <button data-action="left" type="button" aria-label="Move left">◀</button>
+              <button data-action="down" type="button" aria-label="Move down">▼</button>
+              <button data-action="right" type="button" aria-label="Move right">▶</button>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button data-action="interact" type="button" id="mobileInteract" class="action-primary">互动</button>
+            <button data-action="cloak" type="button" id="mobileCloak">影幕</button>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span id="footerText">Look evil. Do good.</span>
+    </footer>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
