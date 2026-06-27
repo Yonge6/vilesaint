@@ -605,13 +605,14 @@
   }
 
   function burstAt(x, y) {
+    const center = tileCenter(x, y);
     successPulse = 24;
     for (let i = 0; i < 28; i += 1) {
       const angle = (Math.PI * 2 * i) / 28;
       const speed = 1.4 + (i % 5) * 0.22;
       particles.push({
-        x: x * TILE + TILE / 2,
-        y: y * TILE + TILE / 2,
+        x: center.x,
+        y: center.y,
         dx: Math.cos(angle) * speed,
         dy: Math.sin(angle) * speed,
         life: 28 + (i % 7),
@@ -935,55 +936,88 @@
     context.closePath();
   }
 
+  function tileCenter(x, y) {
+    return {
+      x: canvas.width / 2 + (x - y) * 20,
+      y: 50 + (x + y) * 11
+    };
+  }
+
+  function diamondPath(x, y, lift = 0) {
+    const center = tileCenter(x, y);
+    ctx.beginPath();
+    ctx.moveTo(center.x, center.y - 12 - lift);
+    ctx.lineTo(center.x + 22, center.y - lift);
+    ctx.lineTo(center.x, center.y + 12 - lift);
+    ctx.lineTo(center.x - 22, center.y - lift);
+    ctx.closePath();
+  }
+
   function drawTile(x, y, tile) {
-    const px = x * TILE;
-    const py = y * TILE;
+    const center = tileCenter(x, y);
+    const lift = tile === "#" ? 15 : 0;
 
     if (tile === "#") {
-      const gradient = ctx.createLinearGradient(px, py, px + TILE, py + TILE);
-      gradient.addColorStop(0, "#2c2930");
-      gradient.addColorStop(1, "#151319");
-      ctx.fillStyle = gradient;
-      roundedRect(ctx, px + 2, py + 2, TILE - 4, TILE - 4, 5);
+      ctx.fillStyle = "#17131a";
+      ctx.beginPath();
+      ctx.moveTo(center.x - 22, center.y - lift);
+      ctx.lineTo(center.x, center.y + 12 - lift);
+      ctx.lineTo(center.x, center.y + 21);
+      ctx.lineTo(center.x - 22, center.y + 9);
+      ctx.closePath();
       ctx.fill();
-      ctx.fillStyle = "rgba(255,239,210,0.06)";
-      ctx.fillRect(px + 8, py + 9, 12, 3);
-      ctx.fillRect(px + 22, py + 24, 10, 3);
+      ctx.fillStyle = "#211b24";
+      ctx.beginPath();
+      ctx.moveTo(center.x + 22, center.y - lift);
+      ctx.lineTo(center.x, center.y + 12 - lift);
+      ctx.lineTo(center.x, center.y + 21);
+      ctx.lineTo(center.x + 22, center.y + 9);
+      ctx.closePath();
+      ctx.fill();
+      const gradient = ctx.createLinearGradient(center.x, center.y - 30, center.x, center.y + 8);
+      gradient.addColorStop(0, "#5a4a52");
+      gradient.addColorStop(1, "#252029");
+      ctx.fillStyle = gradient;
+      diamondPath(x, y, lift);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,239,210,0.12)";
+      ctx.stroke();
       return;
     }
 
     if (tile === "H") {
-      ctx.fillStyle = "#121724";
-      ctx.fillRect(px, py, TILE, TILE);
-      ctx.fillStyle = "rgba(145,185,201,0.18)";
-      ctx.beginPath();
-      ctx.arc(px + 20, py + 22, 12 + Math.sin(animationTime / 20 + x) * 2, 0, Math.PI * 2);
+      ctx.fillStyle = "#121827";
+      diamondPath(x, y);
       ctx.fill();
-      ctx.strokeStyle = "rgba(216,173,98,0.08)";
-      ctx.strokeRect(px + 6, py + 6, TILE - 12, TILE - 12);
+      ctx.fillStyle = "rgba(145,185,201,0.2)";
+      ctx.beginPath();
+      ctx.ellipse(center.x, center.y, 14 + Math.sin(animationTime / 20 + x) * 2, 6, 0, 0, Math.PI * 2);
+      ctx.fill();
       return;
     }
 
     if (tile === "E") {
       ctx.fillStyle = "#101018";
-      ctx.fillRect(px, py, TILE, TILE);
+      diamondPath(x, y);
+      ctx.fill();
       const pulse = 0.55 + Math.sin(animationTime / 16) * 0.18;
       ctx.strokeStyle = `rgba(216,173,98,${pulse})`;
       ctx.lineWidth = 3;
       ctx.beginPath();
-      ctx.arc(px + 20, py + 20, 13, Math.PI * 0.2, Math.PI * 1.8);
+      ctx.arc(center.x, center.y - 6, 16, Math.PI * 0.2, Math.PI * 1.8);
       ctx.stroke();
       ctx.fillStyle = "rgba(145,185,201,0.16)";
       ctx.beginPath();
-      ctx.arc(px + 20, py + 20, 9, 0, Math.PI * 2);
+      ctx.ellipse(center.x, center.y + 4, 13, 5, 0, 0, Math.PI * 2);
       ctx.fill();
       return;
     }
 
-    ctx.fillStyle = (x + y) % 2 === 0 ? "#141116" : "#100e13";
-    ctx.fillRect(px, py, TILE, TILE);
-    ctx.fillStyle = "rgba(255,239,210,0.024)";
-    ctx.fillRect(px + 4, py + 4, 3, 3);
+    ctx.fillStyle = (x + y) % 2 === 0 ? "#18141a" : "#121017";
+    diamondPath(x, y);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,239,210,0.04)";
+    ctx.stroke();
   }
 
   function drawGrid() {
@@ -993,20 +1027,11 @@
       }
     }
 
-    ctx.strokeStyle = "rgba(255,255,255,0.035)";
-    ctx.lineWidth = 1;
-    for (let x = 0; x <= COLS; x += 1) {
-      ctx.beginPath();
-      ctx.moveTo(x * TILE, 0);
-      ctx.lineTo(x * TILE, ROWS * TILE);
-      ctx.stroke();
-    }
-    for (let y = 0; y <= ROWS; y += 1) {
-      ctx.beginPath();
-      ctx.moveTo(0, y * TILE);
-      ctx.lineTo(COLS * TILE, y * TILE);
-      ctx.stroke();
-    }
+    const glow = ctx.createRadialGradient(canvas.width / 2, 220, 80, canvas.width / 2, 220, 360);
+    glow.addColorStop(0, "rgba(216,173,98,0.08)");
+    glow.addColorStop(1, "rgba(216,173,98,0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
   function drawVision() {
@@ -1015,7 +1040,8 @@
     ctx.fillStyle = "rgba(184, 62, 81, 0.16)";
     current.villagers.forEach((villager) => {
       visionTilesFor(villager).forEach((tile) => {
-        ctx.fillRect(tile.x * TILE + 2, tile.y * TILE + 2, TILE - 4, TILE - 4);
+        diamondPath(tile.x, tile.y, -1);
+        ctx.fill();
       });
     });
     ctx.restore();
@@ -1138,14 +1164,13 @@
 
   function drawObjects() {
     current.objects.forEach((object) => {
-      const px = object.x * TILE + TILE / 2;
-      const py = object.y * TILE + TILE / 2;
+      const { x: px, y: py } = tileCenter(object.x, object.y);
 
       ctx.save();
       ctx.globalAlpha = object.done ? 0.42 : 1;
       ctx.fillStyle = object.done ? "rgba(156,199,167,0.14)" : "rgba(216,173,98,0.13)";
       ctx.beginPath();
-      ctx.arc(px, py, 16, 0, Math.PI * 2);
+      ctx.ellipse(px, py, 18, 8, 0, 0, Math.PI * 2);
       ctx.fill();
       ctx.strokeStyle = object.done ? "rgba(156,199,167,0.48)" : "rgba(216,173,98,0.42)";
       ctx.lineWidth = 1;
@@ -1162,11 +1187,10 @@
 
   function drawVillagers() {
     current.villagers.forEach((villager) => {
-      const px = villager.x * TILE;
-      const py = villager.y * TILE;
+      const { x: px, y: py } = tileCenter(villager.x, villager.y);
 
       ctx.save();
-      ctx.translate(px + TILE / 2, py + TILE / 2);
+      ctx.translate(px, py);
       ctx.fillStyle = "#c9a77a";
       ctx.beginPath();
       ctx.arc(0, -5, 8, 0, Math.PI * 2);
@@ -1193,8 +1217,7 @@
   }
 
   function drawPlayer() {
-    const px = player.x * TILE + TILE / 2;
-    const py = player.y * TILE + TILE / 2;
+    const { x: px, y: py } = tileCenter(player.x, player.y);
     const hidden = isHidden();
 
     ctx.save();
