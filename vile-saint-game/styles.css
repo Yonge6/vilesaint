@@ -21,7 +21,6 @@
   --line-strong: rgba(216, 173, 98, 0.42);
   --shadow: rgba(0, 0, 0, 0.42);
   --glass: rgba(255, 255, 255, 0.065);
-  --mobile-controls-h: 148px;
 }
 
 html,
@@ -223,6 +222,7 @@ h1 {
   border: 1px solid rgba(255, 239, 210, 0.1);
   border-radius: 6px;
   outline: none;
+  touch-action: none;
   background:
     radial-gradient(circle at 50% 18%, rgba(145, 185, 201, 0.12), transparent 18rem),
     linear-gradient(180deg, #15131a 0%, #08080c 100%);
@@ -453,66 +453,6 @@ h1 {
   background: rgba(184, 62, 81, 0.32);
 }
 
-.mobile-controls {
-  display: block;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
-    rgba(7, 8, 10, 0.74);
-}
-
-.dpad {
-  display: grid;
-  justify-content: center;
-  gap: 6px;
-}
-
-.dpad > div,
-.action-buttons {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-}
-
-.mobile-controls button {
-  min-width: 62px;
-  min-height: 44px;
-  border: 1px solid rgba(255, 239, 210, 0.15);
-  border-radius: 8px;
-  background: var(--glass);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
-  font-weight: 800;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  cursor: pointer;
-  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
-}
-
-.mobile-controls button:hover {
-  border-color: rgba(255, 207, 125, 0.45);
-  background: rgba(255, 255, 255, 0.095);
-  transform: translateY(-1px);
-}
-
-.mobile-controls button:active {
-  transform: translateY(1px) scale(0.98);
-}
-
-.action-buttons {
-  margin-top: 10px;
-}
-
-.action-buttons button {
-  min-width: 118px;
-  min-height: 48px;
-}
-
-.action-buttons .action-primary {
-  border-color: rgba(255, 226, 165, 0.82);
-  background: linear-gradient(135deg, #ffe2a5 0%, #d8ad62 48%, #f07468 100%);
-  color: #120c08;
-  box-shadow: 0 16px 38px rgba(216, 173, 98, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.42);
-}
-
 .footer {
   margin-top: 13px;
   color: var(--dim);
@@ -535,6 +475,12 @@ h1 {
 }
 
 @media (max-width: 640px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
     background:
       radial-gradient(circle at 50% 0, rgba(216, 173, 98, 0.18), transparent 18rem),
@@ -543,148 +489,77 @@ h1 {
 
   .page-shell {
     width: 100%;
-    padding: 10px 8px calc(var(--mobile-controls-h) + 12px);
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 8px;
+    overflow: hidden;
   }
 
   .topbar {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    align-items: start;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-
-  .top-actions {
-    justify-content: flex-start;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   .brand {
-    align-items: flex-start;
+    align-items: center;
+    gap: 8px;
   }
 
   .sigil {
-    width: 38px;
-    height: 38px;
-    font-size: 22px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   #tagline {
-    margin-top: 4px;
-    font-size: 12px;
+    display: none;
+  }
+
+  .top-actions {
+    justify-content: flex-end;
+    gap: 5px;
   }
 
   .pill,
   .ghost {
-    min-height: 34px;
-    padding: 0 11px;
-    font-size: 12px;
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: 11px;
   }
 
   .game-layout {
+    display: block;
+    height: calc(100dvh - 50px);
     gap: 10px;
   }
 
   .canvas-card {
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    padding: 7px;
+    height: 100%;
+    padding: 6px;
     border-color: rgba(216, 173, 98, 0.28);
   }
 
   #gameCanvas {
-    aspect-ratio: 3 / 2;
-    max-height: 56vh;
+    width: 100%;
+    height: 100%;
+    max-height: none;
     border-radius: 5px;
   }
 
   .panel {
-    gap: 8px;
-  }
-
-  .panel section {
-    padding: 12px;
-  }
-
-  .story-box h2 {
-    margin-bottom: 6px;
-    font-size: 24px;
-  }
-
-  .story-box p,
-  .legend-box p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  .objective {
-    padding: 10px;
-  }
-
-  .message {
-    min-height: 44px;
-    padding: 10px;
-  }
-
-  .stats-box {
-    grid-template-columns: 1fr 1fr;
-    gap: 9px 12px;
-  }
-
-  .stat-row {
-    grid-template-columns: 44px minmax(0, 1fr) 28px;
-    gap: 6px;
-    font-size: 12px;
-  }
-
-  .legend-box {
     display: none;
   }
 
   .overlay-card {
     padding: 20px;
-  }
-
-  .mobile-controls {
-    position: fixed;
-    right: 8px;
-    bottom: 8px;
-    left: 8px;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    align-items: center;
-    min-height: calc(var(--mobile-controls-h) - 16px);
-    padding: 12px;
-    border-color: rgba(216, 173, 98, 0.34);
-    background:
-      linear-gradient(180deg, rgba(255, 239, 210, 0.1), rgba(255, 255, 255, 0.035)),
-      rgba(8, 8, 12, 0.9);
-    box-shadow: 0 -18px 46px rgba(0, 0, 0, 0.44);
-  }
-
-  .mobile-controls button {
-    min-width: 56px;
-    min-height: 50px;
-    border-color: rgba(255, 239, 210, 0.2);
-    font-size: 16px;
-  }
-
-  .action-buttons {
-    display: grid;
-    margin-top: 0;
-  }
-
-  .action-buttons button {
-    width: 100%;
-    min-width: 0;
-    min-height: 56px;
-    font-size: 15px;
   }
 
   .footer {

@@ -1,10 +1,11 @@
 (() => {
   "use strict";
 
-  const TILE = 40;
+  const TILE = 22;
   const COLS = 18;
   const ROWS = 12;
   const MAX = 100;
+  const MAP_TOP = 178;
 
   const canvas = document.getElementById("gameCanvas");
   const ctx = canvas.getContext("2d");
@@ -48,9 +49,7 @@
     legendShadow: $("legendShadow"),
     legendExit: $("legendExit"),
     legendVision: $("legendVision"),
-    footerText: $("footerText"),
-    mobileInteract: $("mobileInteract"),
-    mobileCloak: $("mobileCloak")
+    footerText: $("footerText")
   };
 
   const TEXT = {
@@ -74,7 +73,7 @@
         shadow: "影力"
       },
       howToTitle: "操作",
-      howToText: "移动到目标旁边按“互动”。站在阴影格或使用“影幕”时，村民看不见你。",
+      howToText: "上下左右滑动移动。点附近目标自动帮忙；点自己展开影幕。",
       legend: {
         wall: "墙/树",
         shadow: "阴影",
@@ -82,7 +81,7 @@
         vision: "视线"
       },
       footer: "Look evil. Do good.",
-      ready: "方向键 / WASD / 屏幕按钮移动，空格或“互动”帮忙，E 或“影幕”隐藏。",
+      ready: "上下左右滑动移动。点附近目标帮忙，点自己展开影幕。",
       bump: "这里被树根和石墙挡住了。",
       villagerBlock: "你差点撞上村民！他看见了你的角。",
       seen: "村民看见了你，恐惧正在上升。",
@@ -98,8 +97,6 @@
       panicBody: "他们还没有准备好理解你。夜色把你带走，等下一次机会。",
       finalEyebrow: "结局",
       finalButton: "再玩一次",
-      mobileInteract: "互动",
-      mobileCloak: "影幕",
       endings: {
         accepted: {
           title: "被接纳的怪物圣徒",
@@ -143,7 +140,7 @@
         shadow: "Shadow"
       },
       howToTitle: "Controls",
-      howToText: "Move next to a target and press Help. Villagers cannot see you on shadow tiles or while Shadow Veil is active.",
+      howToText: "Swipe to move. Tap nearby targets to help; tap yourself to open the veil.",
       legend: {
         wall: "Wall/tree",
         shadow: "Shadow",
@@ -151,7 +148,7 @@
         vision: "Vision"
       },
       footer: "Look evil. Do good.",
-      ready: "Move with keys or buttons. Space / Help to act. E / Veil to hide.",
+      ready: "Swipe to move. Tap nearby targets to help; tap yourself to open the veil.",
       bump: "Roots and old stone block the way.",
       villagerBlock: "You almost run into a villager. He sees your horns.",
       seen: "A villager spots you. Fear rises.",
@@ -167,8 +164,6 @@
       panicBody: "They are not ready to understand you. Night carries you away until another chance comes.",
       finalEyebrow: "Ending",
       finalButton: "Play Again",
-      mobileInteract: "Help",
-      mobileCloak: "Veil",
       endings: {
         accepted: {
           title: "The Accepted Monster Saint",
@@ -414,6 +409,8 @@
   let rewardText = "";
   let rewardTimer = 0;
   let particles = [];
+  let touchStart = null;
+  let lastTapHandledAt = 0;
 
   function freshStats() {
     return {
@@ -467,8 +464,6 @@
     dom.legendExit.textContent = copy.legend.exit;
     dom.legendVision.textContent = copy.legend.vision;
     dom.footerText.textContent = copy.footer;
-    dom.mobileInteract.textContent = copy.mobileInteract;
-    dom.mobileCloak.textContent = copy.mobileCloak;
 
     if (mode === "title") {
       dom.overlayEyebrow.textContent = copy.overlayEyebrow;
@@ -649,6 +644,31 @@
 
   function objectAt(x, y) {
     return current.objects.find((object) => object.x === x && object.y === y && !object.done);
+  }
+
+  function canvasPoint(event) {
+    const rect = canvas.getBoundingClientRect();
+    const point = event.changedTouches ? event.changedTouches[0] : event;
+    return {
+      x: ((point.clientX - rect.left) / rect.width) * canvas.width,
+      y: ((point.clientY - rect.top) / rect.height) * canvas.height
+    };
+  }
+
+  function screenToCanvasPoint(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: ((clientX - rect.left) / rect.width) * canvas.width,
+      y: ((clientY - rect.top) / rect.height) * canvas.height
+    };
+  }
+
+  function tileFromPoint(point) {
+    const ox = (canvas.width - COLS * TILE) / 2;
+    return {
+      x: Math.floor((point.x - ox) / TILE),
+      y: Math.floor((point.y - MAP_TOP) / TILE)
+    };
   }
 
   function allObjectivesDone() {
@@ -938,47 +958,26 @@
 
   function tileCenter(x, y) {
     return {
-      x: canvas.width / 2 + (x - y) * 20,
-      y: 50 + (x + y) * 11
+      x: (canvas.width - COLS * TILE) / 2 + x * TILE + TILE / 2,
+      y: MAP_TOP + y * TILE + TILE / 2
     };
   }
 
-  function diamondPath(x, y, lift = 0) {
+  function tilePath(x, y, inset = 1) {
     const center = tileCenter(x, y);
     ctx.beginPath();
-    ctx.moveTo(center.x, center.y - 12 - lift);
-    ctx.lineTo(center.x + 22, center.y - lift);
-    ctx.lineTo(center.x, center.y + 12 - lift);
-    ctx.lineTo(center.x - 22, center.y - lift);
-    ctx.closePath();
+    roundedRect(ctx, center.x - TILE / 2 + inset, center.y - TILE / 2 + inset, TILE - inset * 2, TILE - inset * 2, 5);
   }
 
   function drawTile(x, y, tile) {
     const center = tileCenter(x, y);
-    const lift = tile === "#" ? 15 : 0;
 
     if (tile === "#") {
-      ctx.fillStyle = "#17131a";
-      ctx.beginPath();
-      ctx.moveTo(center.x - 22, center.y - lift);
-      ctx.lineTo(center.x, center.y + 12 - lift);
-      ctx.lineTo(center.x, center.y + 21);
-      ctx.lineTo(center.x - 22, center.y + 9);
-      ctx.closePath();
-      ctx.fill();
-      ctx.fillStyle = "#211b24";
-      ctx.beginPath();
-      ctx.moveTo(center.x + 22, center.y - lift);
-      ctx.lineTo(center.x, center.y + 12 - lift);
-      ctx.lineTo(center.x, center.y + 21);
-      ctx.lineTo(center.x + 22, center.y + 9);
-      ctx.closePath();
-      ctx.fill();
-      const gradient = ctx.createLinearGradient(center.x, center.y - 30, center.x, center.y + 8);
+      const gradient = ctx.createLinearGradient(center.x, center.y - TILE / 2, center.x, center.y + TILE / 2);
       gradient.addColorStop(0, "#5a4a52");
       gradient.addColorStop(1, "#252029");
       ctx.fillStyle = gradient;
-      diamondPath(x, y, lift);
+      tilePath(x, y, 1);
       ctx.fill();
       ctx.strokeStyle = "rgba(255,239,210,0.12)";
       ctx.stroke();
@@ -987,34 +986,34 @@
 
     if (tile === "H") {
       ctx.fillStyle = "#121827";
-      diamondPath(x, y);
+      tilePath(x, y, 1);
       ctx.fill();
       ctx.fillStyle = "rgba(145,185,201,0.2)";
       ctx.beginPath();
-      ctx.ellipse(center.x, center.y, 14 + Math.sin(animationTime / 20 + x) * 2, 6, 0, 0, Math.PI * 2);
+      ctx.arc(center.x, center.y, 5 + Math.sin(animationTime / 20 + x) * 1.2, 0, Math.PI * 2);
       ctx.fill();
       return;
     }
 
     if (tile === "E") {
       ctx.fillStyle = "#101018";
-      diamondPath(x, y);
+      tilePath(x, y, 1);
       ctx.fill();
       const pulse = 0.55 + Math.sin(animationTime / 16) * 0.18;
       ctx.strokeStyle = `rgba(216,173,98,${pulse})`;
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(center.x, center.y - 6, 16, Math.PI * 0.2, Math.PI * 1.8);
+      ctx.arc(center.x, center.y, 8, Math.PI * 0.2, Math.PI * 1.8);
       ctx.stroke();
       ctx.fillStyle = "rgba(145,185,201,0.16)";
       ctx.beginPath();
-      ctx.ellipse(center.x, center.y + 4, 13, 5, 0, 0, Math.PI * 2);
+      ctx.arc(center.x, center.y, 4, 0, Math.PI * 2);
       ctx.fill();
       return;
     }
 
     ctx.fillStyle = (x + y) % 2 === 0 ? "#18141a" : "#121017";
-    diamondPath(x, y);
+    tilePath(x, y, 1);
     ctx.fill();
     ctx.strokeStyle = "rgba(255,239,210,0.04)";
     ctx.stroke();
@@ -1040,7 +1039,7 @@
     ctx.fillStyle = "rgba(184, 62, 81, 0.16)";
     current.villagers.forEach((villager) => {
       visionTilesFor(villager).forEach((tile) => {
-        diamondPath(tile.x, tile.y, -1);
+        tilePath(tile.x, tile.y, 2);
         ctx.fill();
       });
     });
@@ -1059,9 +1058,21 @@
     ctx.stroke();
   }
 
+  function fillFitText(text, x, y, maxWidth, font) {
+    let size = parseInt(font, 10);
+    const suffix = font.replace(/^\d+px\s*/, "");
+    ctx.font = font;
+    while (ctx.measureText(text).width > maxWidth && size > 10) {
+      size -= 1;
+      ctx.font = `${size}px ${suffix}`;
+    }
+    ctx.fillText(text, x, y);
+  }
+
   function drawObjectArt(object, px, py) {
     ctx.save();
     ctx.translate(px, py);
+    ctx.scale(0.72, 0.72);
     ctx.strokeStyle = "#d8ad62";
     ctx.fillStyle = "#d8ad62";
     ctx.lineWidth = 2;
@@ -1179,7 +1190,7 @@
       if (object.done) {
         drawCheckMark(px, py);
       } else {
-        drawObjectArt(object, px, py + 1);
+        drawObjectArt(object, px, py);
       }
       ctx.restore();
     });
@@ -1191,6 +1202,7 @@
 
       ctx.save();
       ctx.translate(px, py);
+      ctx.scale(0.78, 0.78);
       ctx.fillStyle = "#c9a77a";
       ctx.beginPath();
       ctx.arc(0, -5, 8, 0, Math.PI * 2);
@@ -1221,6 +1233,9 @@
     const hidden = isHidden();
 
     ctx.save();
+    ctx.translate(px, py);
+    ctx.scale(0.68, 0.68);
+    ctx.translate(-px, -py);
     ctx.globalAlpha = hidden ? 0.64 : 1;
 
     if (cloakTurns > 0) {
@@ -1290,28 +1305,66 @@
 
   function drawHUDOnCanvas() {
     ctx.save();
-    ctx.fillStyle = "rgba(8,7,10,0.58)";
-    roundedRect(ctx, 10, 10, 172, 34, 7);
+    const levelCopy = current ? localize(current.source) : null;
+    ctx.fillStyle = "rgba(8,7,10,0.72)";
+    roundedRect(ctx, 14, 14, canvas.width - 28, 132, 8);
     ctx.fill();
-    ctx.strokeStyle = "rgba(216,173,98,0.2)";
+    ctx.strokeStyle = "rgba(216,173,98,0.24)";
     ctx.stroke();
+
     ctx.fillStyle = "#f7f0e6";
-    ctx.font = "600 14px sans-serif";
+    ctx.font = "800 13px sans-serif";
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    const hiddenText = lang === "zh" ? "隐藏" : "Hidden";
-    const visibleText = lang === "zh" ? "可见" : "Visible";
-    ctx.fillText(`${isHidden() ? hiddenText : visibleText} · ${cloakTurns > 0 ? cloakTurns : 0}`, 24, 27);
+    ctx.fillText(t().levelNight(levelIndex + 1), 28, 34);
+
+    if (levelCopy) {
+      ctx.font = "900 26px serif";
+      ctx.fillText(levelCopy.title, 28, 64);
+      ctx.fillStyle = "#ffdf91";
+      fillFitText(levelCopy.objective, 28, 94, canvas.width - 56, "13px sans-serif");
+    }
+
+    const statsLine = [
+      [t().stats.fear, stats.fear, "#b83e51"],
+      [t().stats.kindness, stats.kindness, "#91b9c9"],
+      [t().stats.shadow, stats.energy, "#8067b5"]
+    ];
+
+    statsLine.forEach((item, index) => {
+      const x = 28 + index * 126;
+      ctx.fillStyle = "#a7a0a2";
+      ctx.font = "700 11px sans-serif";
+      ctx.fillText(item[0], x, 121);
+      ctx.fillStyle = "rgba(255,255,255,0.12)";
+      roundedRect(ctx, x + 34, 115, 54, 6, 4);
+      ctx.fill();
+      ctx.fillStyle = item[2];
+      roundedRect(ctx, x + 34, 115, 54 * clamp(item[1]) / 100, 6, 4);
+      ctx.fill();
+    });
 
     if (allObjectivesDone()) {
       ctx.fillStyle = "rgba(156,199,167,0.9)";
-      roundedRect(ctx, canvas.width - 196, 10, 184, 34, 7);
+      roundedRect(ctx, canvas.width - 158, 150, 136, 30, 7);
       ctx.fill();
       ctx.fillStyle = "#0b1711";
-      ctx.font = "800 13px sans-serif";
+      ctx.font = "900 12px sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText(lang === "zh" ? "去月门离开" : "Go to moon gate", canvas.width - 104, 27);
+      ctx.fillText(lang === "zh" ? "去月门离开" : "Go to moon gate", canvas.width - 90, 165);
     }
+
+    ctx.fillStyle = "rgba(8,7,10,0.66)";
+    roundedRect(ctx, 18, canvas.height - 96, canvas.width - 36, 74, 8);
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,239,210,0.1)";
+    ctx.stroke();
+    ctx.fillStyle = "#f7f0e6";
+    ctx.textAlign = "center";
+    fillFitText(dom.message.textContent, canvas.width / 2, canvas.height - 68, canvas.width - 54, "14px sans-serif");
+    ctx.fillStyle = "#a7a0a2";
+    ctx.font = "700 12px sans-serif";
+    ctx.fillText(lang === "zh" ? "滑动移动 · 点目标帮助 · 点自己影幕" : "Swipe to move · Tap target · Tap yourself", canvas.width / 2, canvas.height - 39);
     ctx.restore();
   }
 
@@ -1423,6 +1476,67 @@
     canvas.focus();
   }
 
+  function handleCanvasTap(point) {
+    if (mode === "title" || mode === "ending") {
+      startGame();
+      return;
+    }
+
+    if (mode === "panic") {
+      resetLevelAfterPanic();
+      return;
+    }
+
+    if (mode !== "playing") return;
+
+    const tile = tileFromPoint(point);
+    if (tile.x === player.x && tile.y === player.y) {
+      useCloak();
+      return;
+    }
+
+    const target = current.objects.find((object) => !object.done && object.x === tile.x && object.y === tile.y);
+    if (target && Math.abs(target.x - player.x) + Math.abs(target.y - player.y) <= 1) {
+      completeObject(target);
+      checkVision();
+      updateUI();
+      render();
+      return;
+    }
+
+    showMessage(lang === "zh" ? "滑动移动；靠近发光目标后点它帮忙。" : "Swipe to move; tap a glowing target when you are next to it.");
+  }
+
+  function handleTouchStart(event) {
+    event.preventDefault();
+    touchStart = canvasPoint(event);
+  }
+
+  function finishSwipe(end) {
+    if (!touchStart) return;
+
+    const dx = end.x - touchStart.x;
+    const dy = end.y - touchStart.y;
+    touchStart = null;
+
+    if (Math.hypot(dx, dy) < 24) {
+      lastTapHandledAt = Date.now();
+      handleCanvasTap(end);
+      return;
+    }
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      tryMove(dx > 0 ? 1 : -1, 0);
+    } else {
+      tryMove(0, dy > 0 ? 1 : -1);
+    }
+  }
+
+  function handleTouchEnd(event) {
+    event.preventDefault();
+    finishSwipe(canvasPoint(event));
+  }
+
   function bindEvents() {
     dom.langZh.addEventListener("click", () => setLang("zh"));
     dom.langEn.addEventListener("click", () => setLang("en"));
@@ -1436,6 +1550,20 @@
 
     document.querySelectorAll("[data-action]").forEach((button) => {
       button.addEventListener("click", () => mobileAction(button.dataset.action));
+    });
+
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd, { passive: false });
+    canvas.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      touchStart = screenToCanvasPoint(event.clientX, event.clientY);
+    });
+    canvas.addEventListener("pointerup", (event) => {
+      finishSwipe(screenToCanvasPoint(event.clientX, event.clientY));
+    });
+    canvas.addEventListener("click", (event) => {
+      if (Date.now() - lastTapHandledAt < 500) return;
+      handleCanvasTap(canvasPoint(event));
     });
   }
 
