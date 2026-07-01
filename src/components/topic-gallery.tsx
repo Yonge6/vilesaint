@@ -89,6 +89,7 @@ function ProgressivePoster({
         sizes={sizes}
         className={`${className} poster-image-placeholder`}
         priority={priority}
+        unoptimized
       />
       <Image
         src={src}
@@ -102,6 +103,7 @@ function ProgressivePoster({
         ref={imgRef}
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(false)}
+        unoptimized
       />
     </span>
   );
@@ -219,7 +221,7 @@ export function TopicGallery({
 
   function shareDetails(topic: Topic) {
     const content = topic.localizations[isZh ? "zh-CN" : "en-US"];
-    const url = `https://pluto.hk/${locale}/#${topic.slug}`;
+    const url = `https://xiazishuo.com/${locale}/#${topic.slug}`;
     return {
       title: content.headlineFull,
       intro: content.intro,
@@ -407,14 +409,6 @@ export function TopicGallery({
               <span>
                 {String(activeIndex + 1).padStart(2, "0")} / {String(displayTopics.length).padStart(2, "0")}
               </span>
-              <a
-                href={posterAsset(displayTopics[activeIndex].slug, "original")}
-                download
-                onClick={() => trackAnalytics("download", locale, displayTopics[activeIndex].slug)}
-              >
-                <DownloadSimple size={18} aria-hidden="true" />
-                {isZh ? "下载原图" : "Download"}
-              </a>
               <button type="button" onClick={() => setActiveIndex(null)} aria-label={isZh ? "关闭" : "Close"}>
                 <X size={20} aria-hidden="true" />
               </button>
@@ -433,6 +427,14 @@ export function TopicGallery({
               <button type="button" onClick={() => setActiveIndex((activeIndex - 1 + displayTopics.length) % displayTopics.length)}>
                 ← {isZh ? "上一张" : "Previous"}
               </button>
+              <a
+                href={posterAsset(displayTopics[activeIndex].slug, "original")}
+                download
+                onClick={() => trackAnalytics("download", locale, displayTopics[activeIndex].slug)}
+              >
+                <DownloadSimple size={18} aria-hidden="true" />
+                {isZh ? "下载原图" : "Download"}
+              </a>
               <button type="button" onClick={() => setActiveIndex((activeIndex + 1) % displayTopics.length)}>
                 {isZh ? "下一张" : "Next"} →
               </button>
@@ -482,7 +484,7 @@ export function TopicGallery({
             <button className="native-share" type="button" onClick={() => nativeShare(displayTopics[shareIndex])}>
               <ShareNetwork size={22} weight="duotone" aria-hidden="true" />
               <span>
-                <strong>{isZh ? "用手机 App 分享" : "Share with an app"}</strong>
+                <strong>{isZh ? "点击用手机 App 分享" : "Tap to share with an app"}</strong>
                 <small>{isZh ? "标题 + 100字介绍 + 海报图片" : "Headline + introduction + poster image"}</small>
               </span>
               <b>↗</b>
