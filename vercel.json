@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/laicaiyoufang",
+      "destination": "https://laicaiyoufang-vercel.vercel.app/laicaiyoufang/"
+    },
+    {
+      "source": "/laicaiyoufang/:path*",
+      "destination": "https://laicaiyoufang-vercel.vercel.app/laicaiyoufang/:path*"
+    }
+  ]
+}
