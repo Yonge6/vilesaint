@@ -64,8 +64,8 @@ export function IssueMasthead({ locale, issueDate }: { locale: AppLocale; issueD
         </p>
         <p className="issue-date">
           {isZh
-            ? `${compactDate} · 北京时间 00:05 发布`
-            : `${formattedDate} · Published at 00:05 Beijing Time`}
+            ? `${compactDate} · 北京时间 06:00 发布`
+            : `${formattedDate} · Published at 06:00 Beijing Time`}
         </p>
       </div>
 
