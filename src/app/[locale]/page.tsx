@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site-header";
 import { TopicGallery } from "@/components/topic-gallery";
 import { mockIssue } from "@/data/mock-issue";
 import { isAppLocale } from "@/i18n/config";
+import { PRODUCTION_ORIGIN } from "@/lib/site/domain";
 import en from "@/messages/en.json";
 import zh from "@/messages/zh.json";
 
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://pluto.hk/${locale}`,
+      url: `${PRODUCTION_ORIGIN}/${locale}`,
       siteName: "Xiazi Says",
       locale: isZh ? "zh_CN" : "en_US",
       type: "website",
