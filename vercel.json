@@ -1,4 +1,12 @@
 {
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/laicaiyoufang/",
+      "destination": "/laicaiyoufang",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/laicaiyoufang",
